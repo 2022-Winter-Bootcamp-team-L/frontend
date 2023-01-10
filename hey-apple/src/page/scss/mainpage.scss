@@ -4,6 +4,38 @@
   width:100%;
   height:100%;
 }
+@keyframes smoothAppearX {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes smoothAppearY {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@mixin smoothAppearX {
+  animation: smoothAppearX 0.5s ease-in-out 0s 1 normal forwards;
+}
+@mixin smoothAppearY {
+  animation: smoothAppearY 0.5s ease-in-out;
+}
+.smoothAppearX{
+  @include smoothAppearX();
+}
+.smoothAppearY{
+  @include smoothAppearY();
+}
 @mixin fade-in-box{
   animation: fadein 1.5s;
     -moz-animation: fadein 1.5s; /* Firefox */

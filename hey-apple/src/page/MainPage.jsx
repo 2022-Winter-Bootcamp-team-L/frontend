@@ -27,10 +27,10 @@ function IntroLogo({dis}) {
   useEffect(() => {
       let logo = setTimeout(() => {
         setintrologoName(true);
-      }, 400);
+      }, 300);
       let des = setTimeout(()=>{
         setintrodes(true);
-      },700)
+      },600)
       let put = setTimeout(()=>{
         setputmouse(true);
       },2000) 
@@ -41,7 +41,7 @@ function IntroLogo({dis}) {
       };
     }, []); //count변할때만실행[count], [] mount시에만실행
   return(<div id = "intrologo" className = {dis}>
-  {intrologoName===true?<div id = "intrologoname" className='fade-in-box'/>: null}
+  {intrologoName===true?<div id = "intrologoname" className='smoothAppearX'/>: null}
   {introdes===true?<div id = "introdes" className='fade-in-box'>comfortable food calculator</div>: null}
    <div id = "introhov" >         ↑   Click Here to use                  </div>
    {putmouse===true? <div id = "putmouse" className='blinking'>↑ put your mouse here</div>: null}
