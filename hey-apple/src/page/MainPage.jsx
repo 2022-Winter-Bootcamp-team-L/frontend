@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import logoImg from './image/icon4.png';
 import logoName from './image/name3.png';
 import classNames from 'classnames';
+import DragDrop from './components/DragDrop';
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [logotrans,setlogotrans] = useState("");
@@ -16,6 +17,7 @@ function MainPage() {
     } onClick = {()=>{setintro(false)}}> 
     {intro?
     <IntroLogo/>:null}
+    {intro===false? <DragDrop/>: null}
 
     <div id = "intrologoimage" className={classNames('fade-in-box', {logotrans})}/>
     </div>

@@ -1,0 +1,64 @@
+@mixin filledStyle() {
+  background-color: black;
+  color: white;
+}
+
+@mixin alignCenter() {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@mixin dragdropwidth(){
+  width: 600px;
+  height: 600px;
+}
+.nodisplay{
+  display: none;
+}
+.fileuploadtext{
+  font-size: 100px;
+  text-align: center;
+  margin-top: 30px;
+}
+.DragDrop {
+  background-color: antiquewhite;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  
+ 
+  @include dragdropwidth();
+  @include alignCenter();
+  
+  &-File {
+    width: 600px;
+    height: 600px;
+    @include dragdropwidth();
+    border: 2px solid black;
+    border-radius: 10px;
+    
+    @include alignCenter();
+    cursor: pointer;
+    transition: 0.12s ease-in;
+
+    &-Dragging {
+      @include filledStyle();
+    }
+  }
+}
+// .img__box{
+//   background-size: contain;
+//   max-height: 100%;
+//   max-width: 100%;
+
+//   width:400px;
+//   height:400px;
+//   position:absolute;
+//   top:0;
+//   bottom:0;
+//   opacity:0;
+// }
