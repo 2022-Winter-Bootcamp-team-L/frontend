@@ -43,10 +43,19 @@
     -o-animation: fadein 1.5s; /* Opera */
     transform: translateX(20px);
   }
+  @mixin longfade-in-box{
+    animation: fadein 2.0s;
+      -moz-animation: fadein 2.0s; /* Firefox */
+      -webkit-animation: fadein 2.0s; /* Safari and Chrome */
+      -o-animation: fadein 2.0s; /* Opera */
+      transform: translateX(20px);
+    }
   .fade-in-box{
     @include fade-in-box();
   }
-  
+  .longfade-in-box{
+    @include longfade-in-box();
+  }
   @keyframes fadein {
       from {
           opacity: 0;
@@ -118,7 +127,7 @@
   width: 10rem;
   height: 12rem;
   right:15%;
-
+  z-index:2;
   background-image: url(../image/icon4.png);
   background-repeat:no-repeat;
   background-size: contain;
@@ -201,7 +210,7 @@ letter-spacing: 0.2em;
   animation-delay: 1s;
 }
 .logotrans{
-  transform: translate(-21rem, 0);
+  transform: translate(-22rem, 0);
   transition-duration: 1s;
   
 }

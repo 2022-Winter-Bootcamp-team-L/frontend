@@ -8,8 +8,15 @@ import DragDrop from './components/DragDrop';
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [logotrans,setlogotrans] = useState("");
+  const [dropbox,setdropbox] = useState(false);
   const dis = "nodisplay";
-  useEffect(()=>{if(intro==false){setlogotrans("logotrans")}},[intro]);
+  useEffect(()=>{
+  if(intro==false){
+    setlogotrans("logotrans")
+    setdropbox(true)
+}
+  
+},[intro]);
   return (
 
     <div id = "maincontainer" onMouseDown={(e) => {
@@ -17,7 +24,7 @@ function MainPage() {
     } onClick = {()=>{setintro(false)}}> 
     {intro?
     <IntroLogo/>:null}
-    {intro===false? <DragDrop/>: null}
+    {dropbox? <DragDrop /> :null}
 
     <div id = "intrologoimage" className={classNames('fade-in-box', {logotrans})}/>
     </div>

@@ -1,15 +1,17 @@
+import classNames from 'classnames';
 import React, {useState,
   useCallback,
   useEffect,
   ChangeEvent,
   useRef} from 'react';
-import './App.scss' 
+import './DragDrop.scss' 
   const DragDrop = () => {
     // 드래그 중일때와 아닐때의 스타일을 구분하기 위한 state 변수
     const [isDragging, setIsDragging] = useState(false);
     const [files, setFiles] = useState('');
     // 각 선택했던 파일들의 고유값 id
     const fileId = useRef(0);
+    const [forward,setforward] = useState('');
     const onChangeFiles = useCallback((e) => {
       let selectFiles =[];
   
@@ -91,7 +93,7 @@ import './App.scss'
      // 위에서 선언했던 files state 배열을 deps에 넣어줍니다.
     useEffect(()=>{
       preview();
-
+      setforward('forword');
       
     },[files])
     const preview = () => {
@@ -112,7 +114,7 @@ import './App.scss'
     return (
       
       
-      <div className="DragDrop">
+      <div className={classNames('DragDrop',{forward},'longfade-in-box')}>
         <input
           type="file"
           id="fileUpload"
@@ -121,7 +123,7 @@ import './App.scss'
           onChange ={onChangeFiles}
           
         />
-  
+          
         <label
           className={isDragging ? "DragDrop-File-Dragging" : "DragDrop-File"}
           // 드래그 중일때와 아닐때의 클래스 이름을 다르게 주어 스타일 차이
@@ -132,9 +134,9 @@ import './App.scss'
                 onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); console.log('dragover') }} // 추가한 이벤트. onDrop을 위해선 반드시 필요함.
                 onDrop={(e) => { e.preventDefault(); e.stopPropagation(); console.log('drop') }} style={{ width: "100%", height: "100%", display:"block" }}
         >
-          <div className="fileuploadtext">파일 첨부</div>
+         <div className='fileuploadtext'>↑   Drop image here</div>
         </label>
-       
+     
     </div>
      
     );

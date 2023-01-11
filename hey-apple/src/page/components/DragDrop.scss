@@ -12,34 +12,40 @@
   align-items: center;
 }
 @mixin dragdropwidth(){
-  width: 600px;
-  height: 600px;
+  width: 45rem;
+  height: 25rem;
 }
 .nodisplay{
   display: none;
 }
+
 .fileuploadtext{
-  font-size: 100px;
+  font-size: 3rem;
+  margin-top: 15rem;
   text-align: center;
-  margin-top: 30px;
+
+ 
 }
 .DragDrop {
-  background-color: antiquewhite;
-  background-size: contain;
+  z-index:1;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='50' ry='50' stroke='%23333' stroke-width='7' stroke-dasharray='18' stroke-dashoffset='30' stroke-linecap='square'/%3e%3c/svg%3e");
+border-radius: 50px;
   height: 100vh;
-  
- 
+  border-radius: 50px;
+  position:absolute;
+  left:0rem;
+  right:0rem;
+  top:-2rem;  
   @include dragdropwidth();
   @include alignCenter();
   
   &-File {
-    width: 600px;
-    height: 600px;
     @include dragdropwidth();
-    border: 2px solid black;
-    border-radius: 10px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 50px;
     
     @include alignCenter();
     cursor: pointer;
@@ -49,6 +55,9 @@
       @include filledStyle();
     }
   }
+}
+.forward{
+  z-index:3;
 }
 // .img__box{
 //   background-size: contain;
