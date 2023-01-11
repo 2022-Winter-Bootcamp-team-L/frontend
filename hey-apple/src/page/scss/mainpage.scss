@@ -4,6 +4,38 @@
   width:100%;
   height:100%;
 }
+@keyframes smoothAppearX {
+  from {
+    opacity: 0;
+    transform: translateX(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes smoothAppearY {
+  from {
+    opacity: 0;
+    transform: translateY(-5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@mixin smoothAppearX {
+  animation: smoothAppearX 0.5s ease-in-out 0s 1 normal forwards;
+}
+@mixin smoothAppearY {
+  animation: smoothAppearY 0.5s ease-in-out;
+}
+.smoothAppearX{
+  @include smoothAppearX();
+}
+.smoothAppearY{
+  @include smoothAppearY();
+}
 @mixin fade-in-box{
   animation: fadein 1.5s;
     -moz-animation: fadein 1.5s; /* Firefox */
@@ -11,10 +43,19 @@
     -o-animation: fadein 1.5s; /* Opera */
     transform: translateX(20px);
   }
+  @mixin longfade-in-box{
+    animation: fadein 2.0s;
+      -moz-animation: fadein 2.0s; /* Firefox */
+      -webkit-animation: fadein 2.0s; /* Safari and Chrome */
+      -o-animation: fadein 2.0s; /* Opera */
+      transform: translateX(20px);
+    }
   .fade-in-box{
     @include fade-in-box();
   }
-  
+  .longfade-in-box{
+    @include longfade-in-box();
+  }
   @keyframes fadein {
       from {
           opacity: 0;
@@ -86,7 +127,7 @@
   width: 10rem;
   height: 12rem;
   right:15%;
-
+  z-index:2;
   background-image: url(../image/icon4.png);
   background-repeat:no-repeat;
   background-size: contain;
@@ -168,5 +209,9 @@ letter-spacing: 0.2em;
   transition-delay: 0.2s;
   animation-delay: 1s;
 }
-
+.logotrans{
+  transform: translate(-22rem, 0);
+  transition-duration: 1s;
+  
+}
 
