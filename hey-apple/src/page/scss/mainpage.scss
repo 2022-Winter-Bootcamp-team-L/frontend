@@ -114,6 +114,7 @@
   position:relative;
   top: 14rem;
   left:25%;
+  right:25%;
 }
 #intrologo{
   position:absolute;
@@ -190,28 +191,17 @@ font-weight: 400;
 line-height: 40px;
 letter-spacing: 0.2em;
 }
-#intrologo:hover #introdes{
-  opacity: 0;
-  transition: 0.5s;
-  
-  transform: translateY(-5px);
-}
-#intrologo:hover #putmouse{
-  display:none;
-  transition: 0.5s;
-  transition-delay: 0.2s;
-  transform: translateY(-5px);
-}
-#intrologo:hover #introhov{
-  opacity: 1;
-  transition: 0.5s;
-  transform: translateY(-5px);
-  transition-delay: 0.2s;
-  animation-delay: 1s;
-}
-.logotrans{
-  transform: translate(-22rem, 0);
-  transition-duration: 1s;
-  
-}
 
+
+
+.logotrans{
+  @media (min-width: 1500px){
+    transform: translate(-22rem, 0);
+    transition-duration: 1s;
+    
+    }
+    @media(min-width:400px) and (max-width:1500px-1px){
+      transform: translate(-32rem, 0);
+
+    }
+}

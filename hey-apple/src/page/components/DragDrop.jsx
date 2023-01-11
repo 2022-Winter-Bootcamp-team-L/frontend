@@ -5,13 +5,14 @@ import React, {useState,
   ChangeEvent,
   useRef} from 'react';
 import './DragDrop.scss' 
-  const DragDrop = () => {
+  const DragDrop = ({setFile}) => {
     // 드래그 중일때와 아닐때의 스타일을 구분하기 위한 state 변수
     const [isDragging, setIsDragging] = useState(false);
     const [files, setFiles] = useState('');
     // 각 선택했던 파일들의 고유값 id
     const fileId = useRef(0);
     const [forward,setforward] = useState('');
+    const [borders, setborders] = useState('');
     const onChangeFiles = useCallback((e) => {
       let selectFiles =[];
   
@@ -94,6 +95,9 @@ import './DragDrop.scss'
     useEffect(()=>{
       preview();
       setforward('forword');
+      if(files!==''){
+        setborders('bord');
+      }
       
     },[files])
     const preview = () => {
@@ -113,8 +117,7 @@ import './DragDrop.scss'
     
     return (
       
-      
-      <div className={classNames('DragDrop',{forward},'longfade-in-box')}>
+      <div className={classNames('DragDrop',{forward},'longfade-in-box',{borders})}>
         <input
           type="file"
           id="fileUpload"
@@ -135,10 +138,12 @@ import './DragDrop.scss'
                 onDrop={(e) => { e.preventDefault(); e.stopPropagation(); console.log('drop') }} style={{ width: "100%", height: "100%", display:"block" }}
         >
          <div className='fileuploadtext'>↑   Drop image here</div>
+         
         </label>
-     
+        {(files!=='')?(<div id = "filedropguide" className='fade-in-box'>↑ drop again to change photo</div>):null}
+        {(files!=='')?(<div id = "nextupload" className='fade-in-box'>next {'>'}</div>):null}
     </div>
-     
+  
     );
   };
 export default DragDrop;
