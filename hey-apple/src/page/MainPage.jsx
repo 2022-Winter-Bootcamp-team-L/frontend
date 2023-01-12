@@ -1,33 +1,36 @@
 import './scss/mainpage.scss';
 // import DragDrop from './components/DragDrop.jsx';
-import { useCallback, useEffect, useState } from 'react';
+import { useRef, useCallback, useEffect, useState } from 'react';
 import logoImg from './image/icon4.png';
 import logoName from './image/name3.png';
 import classNames from 'classnames';
 import DragDrop from './components/DragDrop';
+import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 function MainPage() {
   const [intro, setintro] = useState(true);
-  const [logotrans,setlogotrans] = useState("");
   const [dropbox,setdropbox] = useState(false);
-  const [file,setfile] = useState('');
+  const [logotrans,setlogotrans] = useState("");
+  const introimage = useRef(null);
+
   const dis = "nodisplay";
-  useEffect(()=>{
-  if(intro==false){
-    setlogotrans("logotrans")
+  function handlemainclicked() {
     setdropbox(true)
-   
-}
-},[intro]);
-  return (
-  <div id="wrap">
+    setlogotrans(true)
+    setintro(false)
+    setTimeout(() => {
+      setlogotrans(false);
+    }, 1500);
+    console.log(logotrans);
+  }
+return (
     <div id = "maincontainer" onMouseDown={(e) => {
       e.preventDefault()}
-    } onClick = {()=>{setintro(false)}}> 
+    } onClick = {()=>{handlemainclicked();}}> 
     {intro?
     <IntroLogo/>:null}
-    {dropbox? <DragDrop setfile={setfile}/> :null}
-
-    <div id = "intrologoimage" className={classNames('fade-in-box', {logotrans})}/>
+    {dropbox? <DragDrop /> :null}
+/
+    <div id = "intrologoimage" ref={introimage} className={classNames('fade-in-box',(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
     </div>
     
     </div>

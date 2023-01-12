@@ -120,8 +120,6 @@
   position:absolute;
   width:50rem;
   height: 15rem;
- 
-    
 }
 #intrologoimage{
   position: absolute;
@@ -195,13 +193,33 @@ letter-spacing: 0.2em;
 
 
 .logotrans{
+  transition-duration: 1s;
   @media (min-width: 1500px){
     transform: translate(-22rem, 0);
-    transition-duration: 1s;
+   
     
     }
-    @media(min-width:400px) and (max-width:1500px-1px){
+    @media(min-width:800px) and (max-width:1500px-1px){
       transform: translate(-32rem, 0);
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      transform: translate(-35rem, 0);
+
+    }
+}
+.logoflex{
+  @media (min-width: 1500px){
+    transform: translate(-22rem, 0);
+   
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      transform: translate(-32rem, 0);
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      transform: translate(-35rem, 0);
 
     }
 }
