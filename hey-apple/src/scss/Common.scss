@@ -35,7 +35,7 @@ html,body {
   height:2rem;
   background-color: #FFFDF2;
   position:absolute;
-  top:20%;
+  top:30%;
   font-size:1.3rem;
   font-family: 'Inter';
   font-style: normal;
@@ -46,18 +46,18 @@ cursor:pointer;
 }
 #header_home{
   width:5rem;
-  right:22rem;
+  right:24rem;
   @include headerscommon();
 }
 #header_aboutus{
   width:8rem;
  
-  right:11rem;
+  right:13rem;
   @include headerscommon();
 }
 #header_products{
   width:7rem;
   
-  right:3rem;
+  right:4.5rem;
   @include headerscommon();
 }
