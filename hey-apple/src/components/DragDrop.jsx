@@ -5,7 +5,7 @@ import React, {useState,
   ChangeEvent,
   useRef} from 'react';
 import '../scss/DragDrop.scss' 
-  const DragDrop = () => {
+  const DragDrop = ({setf}) => {
     // 드래그 중일때와 아닐때의 스타일을 구분하기 위한 state 변수
     const [isDragging, setIsDragging] = useState(false);
     const [files, setFiles] = useState('');
@@ -30,6 +30,7 @@ import '../scss/DragDrop.scss'
      
      
       setFiles(selectFiles);
+      setf(selectFiles)
    } ,[files]);
     // 드래그 이벤트를 감지하는 ref 참조변수 (label 태그에 들어갈 예정)
     const dragRef = useRef(null);
@@ -101,6 +102,7 @@ import '../scss/DragDrop.scss'
       setforward('forword');
      
         setborders('bord');
+        setf(files);
       }
       
     },[files])
@@ -147,7 +149,7 @@ import '../scss/DragDrop.scss'
          
         </label>
         {(files!=='')?(<div id = "filedropguide" className='fade-in-box'>↑ drop again to change photo</div>):null}
-        {(files!=='')?(<div id = "nextupload" className='fade-in-box'>next {'>'}</div>):null}
+       
     </div>
   
     );

@@ -26,7 +26,7 @@
 @mixin dragdroppos(){
   @media (min-width: 1500px){
   position:absolute;
-  left:0rem;
+  left:1rem;
   top:-3rem;  
   }
   @media(min-width:800px) and (max-width:1500px-1px){
@@ -102,35 +102,35 @@ border-radius: 50px;
     right: 4%;
   }
 }
-@mixin dropguidepos(){
+@mixin dropguide(){
   @media (min-width: 1200px){
     position:absolute;
-  bottom: -8rem;
-  left:3rem;
+  bottom: -6rem;
+  left:0rem;
+  font-weight: 400;
+font-size: 2rem;
   }
-  @media(min-width:400px) and (max-width:1200px-1px){
+  @media(min-width:800px) and (max-width:1200px-1px){
     position:absolute;
   bottom: -5rem;
-  left:3rem;
+  left:0rem;
+  font-weight: 400;
+font-size: 1.9rem;
+  }
+  @media(min-width:400px) and (max-width:800px-1px){
+    position:absolute;
+  bottom: -5rem;
+  left:0rem;
+  font-weight: 400;
+font-size: 1.8rem;
   }
 }
-#nextupload{
-  @include nextpos();
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 36px;
-  letter-spacing: 0.2em;
-  color: #000000;
-  cursor:pointer;
-}
+
 #filedropguide{
-  @include dropguidepos();
+  @include dropguide();
   font-family: 'Inter';
 font-style: normal;
-font-weight: 400;
-font-size: 30px;
+
 line-height: 36px;
 letter-spacing: 0.2em;
 color: #000000;
