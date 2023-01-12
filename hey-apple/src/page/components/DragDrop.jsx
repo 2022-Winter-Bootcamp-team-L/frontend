@@ -4,7 +4,7 @@ import React, {useState,
   useEffect,
   ChangeEvent,
   useRef} from 'react';
-import './DragDrop.scss' 
+import '../scss/DragDrop.scss' 
   const DragDrop = () => {
     // 드래그 중일때와 아닐때의 스타일을 구분하기 위한 state 변수
     const [isDragging, setIsDragging] = useState(false);

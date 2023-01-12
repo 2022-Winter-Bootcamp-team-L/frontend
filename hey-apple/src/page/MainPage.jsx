@@ -23,16 +23,17 @@ function MainPage() {
     console.log(logotrans);
   }
 return (
+  <div id="wrap">
     <div id = "maincontainer" onMouseDown={(e) => {
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}> 
     {intro?
     <IntroLogo/>:null}
     {dropbox? <DragDrop /> :null}
-/
     <div id = "intrologoimage" ref={introimage} className={classNames('fade-in-box',(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
     </div>
     
+    </div>
     </div>
   );
 }
