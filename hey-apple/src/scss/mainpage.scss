@@ -114,50 +114,111 @@
   position:relative;
   top: 14rem;
   left:25%;
+  right:25%;
 }
 #intrologo{
   position:absolute;
   width:50rem;
   height: 15rem;
- 
-    
+  
 }
 #intrologoimage{
   position: absolute;
-  width: 10rem;
-  height: 12rem;
-  right:15%;
   z-index:2;
-  background-image: url(../image/icon4.png);
+  background-image: url('../image/icon4.png');
   background-repeat:no-repeat;
   background-size: contain;
+  @media (min-width: 1500px){
+    width: 10rem;
+    height: 12rem;
+    right:15%;
+  
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      width: 10rem;
+      height: 12rem;
+      right:40%;
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      width: 9rem;
+      height: 10rem;
+      right:48%;
+
+
+    }
 }
 #intrologoname{
   position: absolute;
-  width: 40rem;
-  height: 8rem;
-  top:20%;
-  left:0%;
+  @media (min-width: 1500px){
+    width: 40rem;
+    height: 8rem;
+    top:20%;
+    left:0%;
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      width: 32rem;
+      height: 8rem;
+      top:20%;
+      left:-12%;
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      width: 30rem;
+      height: 8rem;
+      top:20%;
+      left:-13%;
+
+    }
+ 
+ 
   background-image: url('../image/name3.png');
   background-repeat:no-repeat;
   background-size: contain;
 }
 #introdes{
   position: absolute;
-  bottom:10%;
-  left:-10%;
-  font-size: 1rem;
+ 
   opacity: 1;
-  width: 50rem;
+ 
+  @media (min-width: 1500px){
+    width: 50rem;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.2em;
+    bottom:10%;
+  left:-10%;
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      width: 40rem;
+      font-weight: 400;
+      font-size: 30px;
+      line-height: 48px;
+      letter-spacing: 0.2em;
+      bottom:14%;
+    left:-17%;
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      width: 30rem;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 48px;
+      letter-spacing: 0.2em;
+      bottom:14%;
+
+    left:-15%;
+
+
+    }
   font-family: 'Inter';
 font-style: normal;
-font-weight: 400;
-font-size: 40px;
-line-height: 48px;
-letter-spacing: 0.2em;
-transition: 0.5s;
-transition-delay: 0.2s;
-transform: translateY(5px);
+
+
 }
 #introhov{
   opacity: 0;
@@ -179,39 +240,90 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 #putmouse{
+  
+  font-family: 'Inter';
+font-style: normal;
+
+letter-spacing: 0.2em;
+@media (min-width: 1500px){
   position: absolute;
   bottom:-27%;
   left:15%;
   font-size: 2rem;
   width: 100rem;
-  font-family: 'Inter';
-font-style: normal;
+  
 font-weight: 400;
 line-height: 40px;
-letter-spacing: 0.2em;
-}
-#intrologo:hover #introdes{
-  opacity: 0;
-  transition: 0.5s;
+  }
+  @media(min-width:800px) and (max-width:1500px-1px){
+    position: absolute;
+  bottom:-27%;
+  left:2%;
+  font-size: 1.8rem;
+  width: 100rem;
+
+font-weight: 400;
+line-height: 40px;
+
+  }
+  @media(min-width:400px) and (max-width:800px-1px){
+    position: absolute;
+    bottom:-27%;
+    left:0%;
+    font-size: 1.5rem;
+    width: 100rem;
   
-  transform: translateY(-5px);
-}
-#intrologo:hover #putmouse{
-  display:none;
-  transition: 0.5s;
-  transition-delay: 0.2s;
-  transform: translateY(-5px);
-}
-#intrologo:hover #introhov{
-  opacity: 1;
-  transition: 0.5s;
-  transform: translateY(-5px);
-  transition-delay: 0.2s;
-  animation-delay: 1s;
-}
-.logotrans{
-  transform: translate(-22rem, 0);
-  transition-duration: 1s;
-  
+  font-weight: 400;
+  line-height: 40px;
+
+
+  }
 }
 
+
+
+.logotrans{
+  transition-duration: 1s;
+  @media (min-width: 1500px){
+    transform: translate(-22rem, 0);
+   
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      transform: translate(-17rem, 0);
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      transform: translate(-15rem, 0);
+
+    }
+}
+.logoflex{
+  @media (min-width: 1500px){
+    transform: translate(-22rem, 0);
+   
+    
+    }
+    @media(min-width:800px) and (max-width:1500px-1px){
+      transform: translate(-17rem, 0);
+
+    }
+    @media(min-width:400px) and (max-width:800px-1px){
+      transform: translate(-15rem, 0);
+
+    }
+   
+}
+#nextupload{
+  position:absolute;
+  bottom:14%;
+right:7%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0.2em;
+  color: #000000;
+  cursor:pointer;
+}

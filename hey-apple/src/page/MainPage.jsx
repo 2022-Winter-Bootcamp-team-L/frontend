@@ -1,32 +1,41 @@
-import './scss/mainpage.scss';
+import '../scss/Mainpage.scss';
 // import DragDrop from './components/DragDrop.jsx';
-import { useCallback, useEffect, useState } from 'react';
-import logoImg from './image/icon4.png';
-import logoName from './image/name3.png';
+import { useRef, useCallback, useEffect, useState } from 'react';
+import logoImg from '../image/icon4.png';
+import logoName from '../image/name3.png';
 import classNames from 'classnames';
-import DragDrop from './components/DragDrop';
+import DragDrop from '../components/DragDrop';
+import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 function MainPage() {
   const [intro, setintro] = useState(true);
-  const [logotrans,setlogotrans] = useState("");
   const [dropbox,setdropbox] = useState(false);
+  const [logotrans,setlogotrans] = useState("");
+  const introimage = useRef(null);
+  const [f,setf] = useState("");
   const dis = "nodisplay";
-  useEffect(()=>{
-  if(intro==false){
-    setlogotrans("logotrans")
+  function handlemainclicked() {
     setdropbox(true)
-}
-  
-},[intro]);
-  return (
-
+    setlogotrans(true)
+    setintro(false)
+    setTimeout(() => {
+      setlogotrans(false);
+    }, 1500);
+    console.log(logotrans);
+  }
+  console.log(f);
+return (
+  <div id="wrap">
     <div id = "maincontainer" onMouseDown={(e) => {
       e.preventDefault()}
-    } onClick = {()=>{setintro(false)}}> 
+    } onClick = {()=>{handlemainclicked();}}> 
     {intro?
     <IntroLogo/>:null}
-    {dropbox? <DragDrop /> :null}
-
-    <div id = "intrologoimage" className={classNames('fade-in-box', {logotrans})}/>
+    {dropbox? <DragDrop setf={setf}/> :null}
+    <div id = "intrologoimage" ref={introimage} className={classNames('fade-in-box',(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
+    </div>
+    
+    </div>
+    {(f!=='')?<div id = "nextupload" className='fade-in-box'>next {'>'}</div>:null}
     </div>
   );
 }
@@ -45,7 +54,7 @@ function IntroLogo() {
         setputmouse(true);
       },2000) 
       return () => {
-        clearTimeout(des);
+        clearTimeout(put);
         clearTimeout(des);
         clearTimeout(logo); //useEffect동작하기전에 특정코드실행(기존데이터요청충돌방지),unmount시에실행
       };
@@ -53,8 +62,7 @@ function IntroLogo() {
   return(<div id = "intrologo">
   {intrologoName===true?<div id = "intrologoname" className='smoothAppearX'/>: null}
   {introdes===true?<div id = "introdes" className='fade-in-box'>comfortable food calculator</div>: null}
-   <div id = "introhov" >         ↑   Click Here to use                  </div>
-   {putmouse===true? <div id = "putmouse" className='blinking'>↑ put your mouse here</div>: null}
+   {putmouse===true? <div id = "putmouse" className='blinking'>↑   Click Here to use </div>: null}
    </div>)
 }
 
