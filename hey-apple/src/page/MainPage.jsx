@@ -1,8 +1,8 @@
 import '../scss/mainpage.scss';
 // import DragDrop from './components/DragDrop.jsx';
 import { useRef, useCallback, useEffect, useState } from 'react';
-import logoImg from './image/icon4.png';
-import logoName from './image/name3.png';
+import logoImg from '../image/icon4.png';
+import logoName from '../image/name3.png';
 import classNames from 'classnames';
 import DragDrop from '../components/DragDrop';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
