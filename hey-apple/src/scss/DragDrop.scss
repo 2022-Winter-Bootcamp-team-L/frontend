@@ -14,29 +14,38 @@
 @mixin dragdropwidth(){
   @media (min-width: 800px){
     width: 45rem;
-    height: 25rem;  
+    height: 27rem;  
     }
  
-  @media(min-width:400px) and (max-width:800px-1px){
+  @media(min-width:680px) and (max-width:800px-1px){
     width:40rem;
-    height:20rem;
+    height:25rem;
   }
-  
+  @media(min-width:200px) and (max-width:680px-1px){
+    width:30rem;
+    height:25rem;
+  }
+
 }
 @mixin dragdroppos(){
   @media (min-width: 1500px){
   position:absolute;
-  left:1rem;
+  left:3%;
   top:-3rem;  
   }
   @media(min-width:800px) and (max-width:1500px-1px){
     position:absolute;
-  left:-10rem;
+  left:-20%;
   top:-3rem; 
   }
-  @media(min-width:400px) and (max-width:800px-1px){
+  @media(min-width:680px) and (max-width:800px-1px){
     position:absolute;
-  left:-10.5rem;
+  left:-13.5%;
+  top:-3rem; 
+  }
+  @media(min-width:200px) and (max-width:680px-1px){
+    position:absolute;
+  left:-14.5%;
   top:-3rem; 
   }
 }
@@ -46,7 +55,7 @@
 
 .fileuploadtext{
   font-size: 3rem;
-  margin-top: 15rem;
+  margin-top: 17rem;
   text-align: center;
   z-index: 2;
 }
@@ -85,45 +94,30 @@ border-radius: 50px;
   z-index:3;
 }
 
-@mixin nextpos(){
-  @media (min-width: 1200px){
-    position:fixed;
-    bottom: -32.5%;
-    right:-42%;
-  }
-  @media(min-width:888px) and (max-width:1200px-1px){
-    position:fixed;
-    bottom: -39%;
-    right: 4%;
-  }
-  @media(min-width:400px) and (max-width:888px-1px){
-    position:fixed;
-    bottom: -39%;
-    right: 4%;
-  }
-}
+
 @mixin dropguide(){
   @media (min-width: 1200px){
     position:absolute;
-  bottom: -6rem;
+  bottom: -5rem;
   left:0rem;
   font-weight: 400;
 font-size: 2rem;
   }
-  @media(min-width:800px) and (max-width:1200px-1px){
+  @media(min-width:680px) and (max-width:1200px-1px){
     position:absolute;
-  bottom: -5rem;
+  bottom: -4rem;
   left:0rem;
   font-weight: 400;
 font-size: 1.9rem;
   }
-  @media(min-width:400px) and (max-width:800px-1px){
+  @media(min-width:200px) and (max-width:680px-1px){
     position:absolute;
-  bottom: -5rem;
+  bottom: -4rem;
   left:0rem;
   font-weight: 400;
-font-size: 1.8rem;
+font-size: 1.4rem;
   }
+  
 }
 
 #filedropguide{

@@ -1,4 +1,4 @@
-import '../scss/Mainpage.scss';
+import '../scss/MainPage.scss';
 // import DragDrop from './components/DragDrop.jsx';
 import { useRef, useCallback, useEffect, useState } from 'react';
 import logoImg from '../image/icon4.png';
