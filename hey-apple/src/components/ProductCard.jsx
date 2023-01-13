@@ -4,10 +4,10 @@ import React, {useState,
   ChangeEvent,
   useRef} from 'react';
 import '../scss/Products.scss' 
-function ProductCard({name,color}){
-  console.log(color);
+function ProductCard({name,color,setheadbg}){
   const imgurl = `/image/${name}.png`;
-  return(<div id = "productcard" style={{backgroundColor: `${color}`}}>
+  return(<div id = "productcard" style={{backgroundColor: `${color}`}} onMouseEnter={() => setheadbg(`${color}`)} 
+  onMouseLeave={() => setheadbg(`${color}`)}>  
     <div id="productname" >{name}</div>
     <img src={imgurl} className = "productimg"/>
   </div>)

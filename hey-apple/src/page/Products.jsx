@@ -14,18 +14,17 @@ function Products() {
                 "PEAR",color:"#FFECA9"},{name:
                   "PERSIMMON",color:"#FFBB89"},{name:
                     "PINEAPPLE",color:"#F6CF6B"}]);
-console.log(productinfo[2].name);
-   
+  const [headbg,setheadbg] = useState("#FFF1D7");
 return (
   <div id = "productwrap">
-    <div id = "productshead">
+    <div id = "productshead" style={{backgroundColor: `${headbg}`}} >
       <div id = "productsheadletter">
     🔍 Explore more Fruits!
     </div>
     </div>
-    <div id = "productscontents">
+    <div id = "productscontents" >
       {productinfo.map(function(a,i){
-        return(<ProductCard name = {productinfo[i].name} color={productinfo[i].color}/>);
+        return(<ProductCard name = {productinfo[i].name} color={productinfo[i].color} setheadbg = {setheadbg}/>);
       })
     }
     </div>
