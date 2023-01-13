@@ -24,7 +24,7 @@ function MainPage() {
   }
   console.log(f);
 return (
-  <div id="wrap">
+  <div id="mainwrap">
     <div id = "maincontainer" onMouseDown={(e) => {
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}> 
