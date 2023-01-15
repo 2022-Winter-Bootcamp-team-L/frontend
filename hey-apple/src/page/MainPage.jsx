@@ -1,4 +1,5 @@
 import '../scss/MainPage.scss';
+import Header from '../components/Header'
 // import DragDrop from './components/DragDrop.jsx';
 import { useRef, useCallback, useEffect, useState } from 'react';
 import logoImg from '../image/icon4.png';
@@ -19,23 +20,26 @@ function MainPage() {
     setintro(false)
     setTimeout(() => {
       setlogotrans(false);
-    }, 1500);
+    }, 990);
     console.log(logotrans);
   }
   console.log(f);
 return (
   <div id="mainwrap">
-    <div id = "maincontainer" onMouseDown={(e) => {
+      <Header/>
+    <div id = "maincontainer">
+    <div id = "mainintro" onMouseDown={(e) => {
       e.preventDefault()}
-    } onClick = {()=>{handlemainclicked();}}> 
+    } onClick = {()=>{handlemainclicked();}}>
     {intro?
     <IntroLogo/>:null}
     {dropbox? <DragDrop setf={setf}/> :null}
-    <div id = "intrologoimage" ref={introimage} className={classNames('fade-in-box',(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
+    <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
     </div>
     
     </div>
     {(f!=='')?<div id = "nextupload" className='fade-in-box'>next {'>'}</div>:null}
+    </div>
     </div>
   );
 }
@@ -46,10 +50,10 @@ function IntroLogo() {
   useEffect(() => {
       let logo = setTimeout(() => {
         setintrologoName(true);
-      }, 300);
+      }, 500);
       let des = setTimeout(()=>{
         setintrodes(true);
-      },600)
+      },800)
       let put = setTimeout(()=>{
         setputmouse(true);
       },2000) 
