@@ -284,22 +284,10 @@
 
 .logotrans {
   transition-duration: 1s;
+	transform: translate(-22rem, 0);
 }
-@media (min-width: 1500px) {
-  .logotrans {
-    transform: translate(-22rem, 0);
-  }
-}
-@media (min-width: 800px) and (max-width: 1499px) {
-  .logotrans {
-    transform: translate(-17rem, 0);
-  }
-}
-@media (min-width: 400px) and (max-width: 799px) {
-  .logotrans {
-    transform: translate(-15rem, 0);
-  }
-}
+
+
 
 @media (min-width: 1500px) {
   .logoflex {
