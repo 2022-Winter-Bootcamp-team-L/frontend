@@ -54,7 +54,7 @@
   border-radius: 3.125rem;
  
   position:absolute;
-  top:50%;
+  top:45%;
   left:50%;
   transform: translate(-50%,-50%);
   &-File {
@@ -79,17 +79,33 @@ border-radius: 3.125rem;
 
   
 
-#filedropguide{
-position:absolute;
-  font-family: 'Inter';
-font-style: normal;
-bottom:0;
-line-height: 2.25rem;
-letter-spacing: 0.2em;
-color: #000000;
+#dropguide{
+  @media(min-width:47rem){ 
+    width:40rem;
+    height:fit-content;
+    line-height: 2.25rem;
+  letter-spacing: 0.2em;
+  font-size: 2rem;
+  }  
+  @media(min-width:1rem)and (max-width:46.999rem){
+ 
+    height:fit-content;
+  letter-spacing: 0.4vw;
+  color: #000000;
+  font-size: 4.7vw;
+  line-height: 2.25rem;
+  width: 100%;
+ 
 }
-
-
+text-align: center;
+position: absolute;
+/* bottom: -60%; */
+font-family: 'Inter';
+font-style: normal;
+bottom:-10%;
+left: 50%;
+transform: translate(-50%,0);
+}
 // .img__box{
 //   background-size: contain;
 //   max-height: 100%;

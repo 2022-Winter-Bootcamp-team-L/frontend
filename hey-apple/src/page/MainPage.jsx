@@ -35,11 +35,14 @@ return (
     <IntroLogo/>:null}
     {dropbox? <DragDrop setf={setf}/> :null}
     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} >
+
     </div>
-    
+  
+    </div>
+   
+   
     </div>
     {(f!=='')?<div id = "nextupload" className='fade-in-box'>next {'>'}</div>:null}
-    </div>
     </div>
   );
 }

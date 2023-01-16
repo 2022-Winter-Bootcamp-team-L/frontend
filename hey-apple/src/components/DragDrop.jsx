@@ -146,9 +146,9 @@ import '../scss/DragDrop.scss'
                 onDrop={(e) => { e.preventDefault(); e.stopPropagation(); console.log('drop') }} style={{ width: "100%", height: "100%", display:"block" }}
         >
          <div className='fileuploadtext'>↑   Drop image here</div>
-         
+         {(files!=='')?<div id = "dropguide" className='fade-in-box'>↑ drop again to change photo</div>:null}
         </label>
-        {(files!=='')?(<div id = "filedropguide" className='fade-in-box'>↑ drop again to change photo</div>):null}
+
        
     </div>
   
