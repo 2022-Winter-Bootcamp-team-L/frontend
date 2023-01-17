@@ -1,14 +1,16 @@
-import './scss/Common.scss';
-import Products from './page/Products'
+import React from "react";
+import MainPage from './page/MainPage';
+import ProductsMain from "./page/ProductsMain";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header'
-import {Routes,Route} from 'react-router-dom';
 function App() {
   return (
-    <div id="wrap">
-      <Header/>
-      <Products/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/products" element={<ProductsMain />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
