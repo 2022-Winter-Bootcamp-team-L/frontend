@@ -1,7 +1,7 @@
 import '../scss/MainPage.scss';
 import Header from '../components/Header'
 // import DragDrop from './components/DragDrop.jsx';
-import { useRef, useCallback, useEffect, useState } from 'react';
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import logoImg from '../image/icon4.png';
 import logoName from '../image/name3.png';
 import classNames from 'classnames';
