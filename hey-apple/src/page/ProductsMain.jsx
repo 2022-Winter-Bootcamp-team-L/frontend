@@ -1,5 +1,4 @@
 import React from 'react';
-
 import '../scss/Common.scss';
 import Products from '../page/Products';
 import Header from '../components/Header';
