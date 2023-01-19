@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import DragDrop from '../components/DragDrop';
 import Loading from '../components/Loading';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
-import React from "react";
+
 
 function MainPage() {
   const [intro, setintro] = useState(true);
