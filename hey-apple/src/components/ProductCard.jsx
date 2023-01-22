@@ -3,11 +3,22 @@ import React, {useState,
   useEffect,
   ChangeEvent,
   useRef} from 'react';
+  import { useNavigate } from 'react-router-dom';
+
 import '../scss/Products.scss' 
 function ProductCard({name,color,setheadbg}){
+  const navigate = useNavigate();
   const imgurl = `/image/${name}.png`;
+  function move(){
+    navigate(`/productdetail/${name}`,{
+      state: {
+        color: `${color}`,
+        image: `${imgurl}`
+        }
+      })
+    }
   return(<div id = "productcard" style={{backgroundColor: `${color}`}} onMouseEnter={() => setheadbg(`${color}`)} 
-  onMouseLeave={() => setheadbg(`${color}`)}>  
+  onMouseLeave={() => setheadbg(`${color}`)} onClick = {()=>{move()}}>  
     <div id="productname" >{name}</div>
     <img src={imgurl} className = "productimg"/>
   </div>)

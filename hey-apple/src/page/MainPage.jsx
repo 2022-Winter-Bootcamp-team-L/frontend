@@ -50,7 +50,7 @@ return (
   <div id="mainwrap">
       <Header/>
     <div id = "maincontainer">
-    {/* <div id = "mainintro" onMouseDown={(e) => {
+    <div id = "mainintro" onMouseDown={(e) => {
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}>
     {intro?
@@ -58,8 +58,8 @@ return (
     {dropbox? <DragDrop setf={setf}/> :null}
      {(loading===false)?     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} />:null} 
    
-    </div> */}
-    {/* {(loading)? */<Loading />/*: null} */}
+    </div>
+    {(loading)? <Loading />: null}
     </div>
    
     {/* {(f!==''&&dropbox)?<div id = "nextupload" className='fade-in-box' onClick={()=>{transmitimg()}}>next {'>'}</div>:null} */}

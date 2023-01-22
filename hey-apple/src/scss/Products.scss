@@ -30,6 +30,12 @@
   background: white;
   width:100%;
 }
+#productwrap2{
+  position: relative;
+  width:100%;
+  height:100%;
+  background-color:#FFFDF2;
+}
 #productshead{
   height:11rem;
   width:100%;
@@ -46,11 +52,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: 'Quicksand';
-font-style: normal;
-line-height: 85px;
-letter-spacing: 0.2em;
-font-weight: 300;
+  font-family: 'Inter';
+  font-style: normal;
+  line-height: 85px;
+  letter-spacing: 0.2em;
+  font-weight: 300;
 }
 #productscontents{
   height:fit-content;
@@ -83,7 +89,6 @@ font-weight: 300;
   left: 50%;
   transform:translate(-50%,0);
   text-align: center;
-  font-family: 'Quicksand';
 }
 .productimg{
   position:absolute;
@@ -94,3 +99,204 @@ font-weight: 300;
   width:70%;
   height:70%;
 }
+#detailimagecontainer{
+  width:100%;
+  height:45%;
+  background-color: #FFCBCB;
+  position: absolute;
+  top:0;
+}
+.detailimage{
+  width:30%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.imagecontainer{
+  padding-top:50%;
+}
+img{
+  position: absolute; top:0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+#detailarrowleft{
+  top:3%;
+  left:1.5%;
+  width:2.5%;
+  height:7%;
+  position: absolute;
+}
+#detailcontentcontainer{
+  top:45%;
+  width:100%;
+  height:55%;
+  background-color: #fffef1;
+  position: absolute;
+}
+#contentname{
+  font-size:3.0rem;
+  text-align : center;
+  width:100%;
+  margin-top:0.5rem;
+}
+#btninner{
+  width:10rem;
+  position:absolute;
+  left:50%;
+  top:5rem;
+  transform: translate(-50%,0);
+}
+
+#detailcontent{
+  font-size:3rem;
+  text-align : center;
+  width:100%;
+  margin-top:8rem;
+}
+
+button{
+  width:2.5rem;
+  height:0.7rem;
+  border-radius:10rem;
+  background-color:#ffcbcb;
+  cursor:pointer;
+  border:none;
+}
+
+.btn-1 {
+  position:absolute;
+  left:0%;
+  color: #FFCBCB;
+  z-index: 2;
+  line-height: 40px;
+  padding: 0;
+}
+.btn-1:hover{
+  border: none;
+}
+.btn-1:before,
+.btn-1:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  border: 2px solid;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.btn-1:before {
+  top: 0;
+   left: 0;
+   border-bottom-color: transparent;
+   border-right-color: transparent;
+   border-top-color: #FFCBCB;
+   border-left-color: #FFCBCB;
+}
+.btn-1:after{
+   bottom: 0;
+   right: 0;
+   border-top-color: transparent;
+   border-left-color: transparent;
+   border-bottom-color: #FFCBCB;
+   border-right-color: #FFCBCB
+}
+.btn-1:hover:before,
+.btn-1:hover:after {
+  border-color: #FFCBCB;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-2 {
+  position:absolute;
+  left:50%;
+  transform:translate(-50%,0);
+  position:absolute;
+  right:0%;
+  color: #FFCBCB;
+  z-index: 2;
+  line-height: 40px;
+  padding: 0;
+}
+.btn-2:hover{
+  border: none;
+}
+.btn-2:before,
+.btn-2:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  border: 2px solid;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.btn-2:before {
+  top: 0;
+   left: 0;
+   border-bottom-color: transparent;
+   border-right-color: transparent;
+   border-top-color: #FFCBCB;
+   border-left-color: #FFCBCB;
+}
+.btn-2:after{
+   bottom: 0;
+   right: 0;
+   border-top-color: transparent;
+   border-left-color: transparent;
+   border-bottom-color: #FFCBCB;
+   border-right-color: #FFCBCB
+}
+.btn-2:hover:before,
+.btn-2:hover:after {
+  border-color: #FFCBCB;
+  height: 100%;
+  width: 100%;
+}
+
+.btn-3 {
+  position:absolute;
+  right:0%;
+  color: #FFCBCB;
+  z-index: 2;
+  line-height: 40px;
+  padding: 0;
+}
+.btn-3:hover{
+  border: none;
+}
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 0%;
+  border: 2px solid;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.btn-3:before {
+  top: 0;
+   left: 0;
+   border-bottom-color: transparent;
+   border-right-color: transparent;
+   border-top-color: #FFCBCB;
+   border-left-color: #FFCBCB;
+}
+.btn-3:after{
+   bottom: 0;
+   right: 0;
+   border-top-color: transparent;
+   border-left-color: transparent;
+   border-bottom-color: #FFCBCB;
+   border-right-color: #FFCBCB
+}
+.btn-3:hover:before,
+.btn-3:hover:after {
+  border-color: #FFCBCB;
+  height: 100%;
+  width: 100%;
+}
+
