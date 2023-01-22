@@ -8,7 +8,7 @@ import classNames from 'classnames';
 import DragDrop from '../components/DragDrop';
 import Loading from '../components/Loading';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
-import React from "react";
+
 
 function MainPage() {
   const [intro, setintro] = useState(true);
@@ -50,7 +50,7 @@ return (
   <div id="mainwrap">
       <Header/>
     <div id = "maincontainer">
-    {/* <div id = "mainintro" onMouseDown={(e) => {
+    <div id = "mainintro" onMouseDown={(e) => {
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}>
     {intro?
@@ -58,8 +58,8 @@ return (
     {dropbox? <DragDrop setf={setf}/> :null}
      {(loading===false)?     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} />:null} 
    
-    </div> */}
-    {/* {(loading)? */<Loading />/*: null} */}
+    </div>
+    {(loading)? <Loading />: null}
     </div>
    
     {/* {(f!==''&&dropbox)?<div id = "nextupload" className='fade-in-box' onClick={()=>{transmitimg()}}>next {'>'}</div>:null} */}

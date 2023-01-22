@@ -2,6 +2,7 @@ import '../scss/Products.scss';
 // import DragDrop from './components/DragDrop.jsx';
 import { useRef, useCallback, useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
+import Header from '../components/Header'
 function Products() {
   const [productinfo,setproductinfo] = useState([{name:"APPLE",color:"#FFCBCB"},{name:"AVOCADO",color:"#B7C89B"},{name:
   "BANANA",color:"#FFF282"},{name:
@@ -17,6 +18,7 @@ function Products() {
   const [headbg,setheadbg] = useState("#FFF1D7");
 return (
   <div id = "productwrap">
+    <Header />
     <div id = "productshead" style={{backgroundColor: `${headbg}`}} >
       <div id = "productsheadletter">
     🔍 Explore more Fruits!
