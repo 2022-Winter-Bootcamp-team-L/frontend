@@ -16,7 +16,7 @@ function Loading({name,color,setheadbg}){
   const [fade,setfade] = useState("");
   function increasespot(){
 
-    if(spot>3){
+    if(spot>2){
       setspot((spot)=>spot=0);
     } else
     setspot((spot)=>spot+1);
@@ -35,11 +35,11 @@ function Loading({name,color,setheadbg}){
           
     
         
-      }, 400);
+      }, 500);
   useInterval(()=>{
     increaseindex();
     setloadmessage(imgpostloadmesages[loadmesindex]);
-  },1600);
+  },1500);
  
 
 
