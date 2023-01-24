@@ -11,7 +11,7 @@ import classNames from 'classnames';
 function Loading({name,color,setheadbg}){
   const [spot,setspot] = useState(0);
   const [loadmesindex,setmesindex] = useState(0);
-  const imgpostloadmesages = ["과일바구니에서 과일꺼내는중","과일 냄새 맡아보는중","과일 모양 확인해 보는 중","과일 한입만 맛보는 중"];
+  const imgpostloadmesages = ["과일사진에서 과일꺼내는중","과일 냄새 맡아보는중","과일 모양 확인해 보는 중","과일 한입만 맛보는 중"];
   const [loadmessage,setloadmessage] = useState(imgpostloadmesages[0]);
   const [fade,setfade] = useState("");
   function increasespot(){

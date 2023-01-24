@@ -1,21 +1,19 @@
 import React from 'react';
 import '../scss/Common.scss';
+import { useNavigate } from 'react-router-dom';
 function Header() {
+  const navigate = useNavigate();
   return (
 <div id="header">
   <div id = "header_contents">
-  <div id = "header_home" >
-    <a href="http://localhost:3000" style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '400' }}>
+  <div id = "header_home" onClick={()=>{navigate('/')}} style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
       Home
-    </a>
   </div>
-  <div id = "header_aboutus" style={{ fontFamily: 'Quicksand', fontWeight: '500' }}>
+  <div id = "header_aboutus" onClick={()=>{navigate('/aboutus')}} style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
     about us
   </div>
-  <div id = "header_products">
-    <a href="http://localhost:3000/products" style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
+  <div id = "header_products" onClick={()=>{navigate('/products')}} style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
       products
-    </a>
   </div>
   </div>
 </div>
