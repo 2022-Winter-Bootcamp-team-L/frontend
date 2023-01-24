@@ -10,11 +10,6 @@ import Loading from '../components/Loading';
 import ImagePreview from '../components/ImagePreview';
 import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
-<<<<<<< HEAD
-=======
-
-
->>>>>>> develop
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [dropbox,setdropbox] = useState(false);
@@ -67,11 +62,7 @@ function MainPage() {
   <div id="mainwrap">
       <Header/>
     <div id = "maincontainer">
-<<<<<<< HEAD
      <div id = "mainintro" className = {classNames((f.length>0)?'goleft':'center')} onMouseDown={(e) => {
-=======
-    <div id = "mainintro" onMouseDown={(e) => {
->>>>>>> develop
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}>
     {intro?
@@ -79,15 +70,10 @@ function MainPage() {
     
      {(loading===false)?     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} />:null} 
    
-<<<<<<< HEAD
      {(dropbox&&loading===false)? <DragDrop f = {f} setf={setf} preimg = {preimg} loading={loading}/> :null}
      
 
      
-=======
-    </div>
-    {(loading)? <Loading />: null}
->>>>>>> develop
     </div>
     {(f.length>0&&(loading===false))? <ImagePreview file={f} setfile = {setf} setpreimg = {setpreimg} preimg = {preimg}/>: null}
     {(loading)? <Loading />: null} 
