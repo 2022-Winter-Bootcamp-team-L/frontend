@@ -7,9 +7,9 @@ import logoName from '../image/name3.png';
 import classNames from 'classnames';
 import DragDrop from '../components/DragDrop';
 import Loading from '../components/Loading';
+import ImagePreview from '../components/ImagePreview';
+import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
-
-
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [dropbox,setdropbox] = useState(false);
@@ -17,8 +17,9 @@ function MainPage() {
   const introimage = useRef(null);
   const [f,setf] = useState("");
   const [loading,setLoading] = useState(false);
+  const [preimg,setpreimg] = useState("");
   const dis = "nodisplay";
-  function handlemainclicked() {
+    function handlemainclicked() {
     setdropbox(true)
     setlogotrans(true)
     setintro(false)
@@ -27,44 +28,59 @@ function MainPage() {
     }, 990);
     console.log(logotrans);
   }
-  function transmitimg() {
+  async function transmitimg(e) {
+    e.preventDefault();
+    console.log(f[0].object)
     const formData = new FormData();
-    formData.append('files',f);
+    for(let i=0; i<f.length; i++){
+      formData.append('filename',f[i].object);
+    }
+    
     try{
     setdropbox(false);
     setLoading(true);
-    //  axios.post({
-    //   url: 'api/vi/orders',
-    //   data: formData,
-    //   headers: {
-    //     'Content-Type': 'multipart/form-data',
-    //   },
-    // });
+    await axios.post(
+      'http://localhost:8000/api/v1/orders/tasks',
+       formData, {
+  headers: {
+    'Content-Type': 'multipart/form-data'
+  }
+},{
+  withCredentials: true 
+}
+    ).then((response)=>{
+      console.log(response)}
+      );
+
+  
 
   } catch(err){
-    setLoading(false);
+  setdropbox(true)
   }
   }
-  console.log(f);
-return (
+  return (
   <div id="mainwrap">
       <Header/>
     <div id = "maincontainer">
-    {/* <div id = "mainintro" onMouseDown={(e) => {
+     <div id = "mainintro" className = {classNames((f.length>0)?'goleft':'center')} onMouseDown={(e) => {
       e.preventDefault()}
     } onClick = {()=>{handlemainclicked();}}>
     {intro?
     <IntroLogo/>:null}
-    {dropbox? <DragDrop setf={setf}/> :null}
+    
      {(loading===false)?     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} />:null} 
    
-    </div> */}
-    {/* {(loading)? */<Loading />/*: null} */}
+     {(dropbox&&loading===false)? <DragDrop f = {f} setf={setf} preimg = {preimg} loading={loading}/> :null}
+     
+
+     
     </div>
-   
-    {/* {(f!==''&&dropbox)?<div id = "nextupload" className='fade-in-box' onClick={()=>{transmitimg()}}>next {'>'}</div>:null} */}
+    {(f.length>0&&(loading===false))? <ImagePreview file={f} setfile = {setf} setpreimg = {setpreimg} preimg = {preimg}/>: null}
+    {(loading)? <Loading />: null} 
     </div>
-  
+    {(f.length>0&&dropbox&&loading===false)?<div onClick={(e)=>{transmitimg(e)}} id = "nextupload" className='fade-in-box' >next {'>'}</div>:null}
+    </div>
+
   );
 }
 function IntroLogo() {
