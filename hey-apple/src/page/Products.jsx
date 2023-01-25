@@ -1,6 +1,6 @@
 import '../scss/Products.scss';
 // import DragDrop from './components/DragDrop.jsx';
-import { useRef, useCallback, useEffect, useState } from 'react';
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Header from '../components/Header'
 function Products() {
