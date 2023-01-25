@@ -1,6 +1,7 @@
 import React from "react";
 import MainPage from './page/MainPage';
 import ProductsMain from "./page/ProductsMain";
+import ResultsPage from "./page/ResultsPage";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/products" element={<ProductsMain />} />
+        <Route path="/payment" element={<ResultsPage />} />
       </Routes>
     </BrowserRouter>
   );
