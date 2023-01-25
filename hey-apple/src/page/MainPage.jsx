@@ -10,6 +10,8 @@ import Loading from '../components/Loading';
 import ImagePreview from '../components/ImagePreview';
 import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
+import { useNavigate } from 'react-router-dom';
+import useInterval from '../components/useInterVal';
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [dropbox,setdropbox] = useState(false);
@@ -18,6 +20,7 @@ function MainPage() {
   const [f,setf] = useState("");
   const [loading,setLoading] = useState(false);
   const [preimg,setpreimg] = useState("");
+  const navigate = useNavigate()
   const dis = "nodisplay";
     function handlemainclicked() {
     setdropbox(true)
@@ -49,7 +52,8 @@ function MainPage() {
   withCredentials: true 
 }
     ).then((response)=>{
-      console.log(response)}
+        navigate(`/result/${response.data.task_id}`)
+    }
       );
 
   
@@ -58,6 +62,9 @@ function MainPage() {
   setdropbox(true)
   }
   }
+  useInterval(()=>{
+    console.log('ㅈ같다');
+  },null)
   return (
   <div id="mainwrap">
       <Header/>
