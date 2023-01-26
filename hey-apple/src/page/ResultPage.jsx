@@ -22,7 +22,7 @@ function ResultPage(){
   const [fruitvalues,setfruitvalues] = useState();
   const [totalprice,settotal] = useState(0);
   function delaytime(){
-    return (length<=1)?2000:null
+    return (length<=1)?500:null
   }
   useEffect(()=>{
       axios.get(geturl).then(response => {setdata(response.data)})
