@@ -37,7 +37,7 @@ export default function ResultsBox({keys,values,total}) {
                 <div id = "fruitinfocontainer">
                     <div id = "receiptfruitnames">{keys[i]}</div>
                     <div id = "receiptfruitcount">{values[i].count}</div>
-                    <div id = "receiptfruitprice">{values[i].price}</div>
+                    <div id = "receiptfruitprice">{values[i].price*values[i].count}</div>
                 </div>);})}
             </div>
             <div id = "receipttotal">

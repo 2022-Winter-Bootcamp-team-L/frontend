@@ -38,7 +38,7 @@ function Loading({name,color,setheadbg}){
       }, 500);
   useInterval(()=>{
     increaseindex();
-    setloadmessage(imgpostloadmesages[loadmesindex]);
+    setloadmessage(imgpostloadmessages[loadmesindex]);
   },1500);
  
 

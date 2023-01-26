@@ -26,8 +26,11 @@ import '../scss/DragDrop.scss'
         } else {
           selectFiles = e.target.files;
         }
-  
+       if(f.length>=4){
+        alert('넣을 수 있는 사진은 4개가 최대입니다.')
+       }else{
         for (const file of selectFiles) {
+          
           tempFiles = [
             ...tempFiles,
             {
@@ -37,6 +40,7 @@ import '../scss/DragDrop.scss'
           ];
         }
           setf(tempFiles);
+      }
       },
       [f]
     );
@@ -119,7 +123,6 @@ import '../scss/DragDrop.scss'
     else{
       setforward('');
      setborders('');
-     console.log(preimg)
      setimg(notimageborder)
      }}
   ,[preimg])
@@ -166,7 +169,7 @@ import '../scss/DragDrop.scss'
           drag or click to add image</div>
          
         </label>
-        {(f.length>0&&preimg!=='')?<div id = "dropguide" className='fade-in-box'>↑ drag or click to change photo</div>:null}
+        {(f.length>0&&preimg!=='')?<div id = "dropguide" className='fade-in-box'>↑ drag or click to add photo</div>:null}
     </div>
     
     );
