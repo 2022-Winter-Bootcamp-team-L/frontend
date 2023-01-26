@@ -11,7 +11,9 @@ const useInterval = (callback, delay) => {
     const executeCallback = () => {
       savedCallback.current();
     };
-
+    if(!delay && delay!==0){
+      return
+    }
     const timerId = setInterval(executeCallback, delay);
 
     return () => clearInterval(timerId);

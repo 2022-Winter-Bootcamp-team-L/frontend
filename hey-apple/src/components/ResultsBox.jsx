@@ -2,9 +2,12 @@ import React from "react";
 import '../scss/Receipt.scss'
 import Divider from "./Divider";
 
-export default function ResultsBox() {
+export default function ResultsBox({keys,values,total}) {
+    console.log(keys)
+    console.log(values)
     return (
         <box id="receipt">
+            
             <div id="receipt_title">
                 receipt
             </div>
@@ -28,6 +31,22 @@ export default function ResultsBox() {
             <div>
                 <Divider/>
             </div>
+            <div id = "fruitscontainer">
+                {values.map(function(a,i){
+                return(
+                <div id = "fruitinfocontainer">
+                    <div id = "receiptfruitnames">{keys[i]}</div>
+                    <div id = "receiptfruitcount">{values[i].count}</div>
+                    <div id = "receiptfruitprice">{values[i].price}</div>
+                </div>);})}
+            </div>
+            <div id = "receipttotal">
+                    <b>total:</b> {total}
+            </div>
+            {/* <Divider style={{ 
+                marginTop:'5%',
+                marginBottom: '5%'
+            }} /> */}
             <button
                 id="payment_button"
                 onClick={() => {
@@ -37,9 +56,7 @@ export default function ResultsBox() {
                 PAY
             </button>
             
-            {/* <Divider style={{ 
-                marginBottom: '5%'
-            }} /> */}
+          
         </box>
     );
 }

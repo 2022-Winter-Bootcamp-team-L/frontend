@@ -13,7 +13,8 @@ import '../scss/DragDrop.scss'
     const fileId = useRef(0);
     const [forward,setforward] = useState('');
     const [borders, setborders] = useState('');
-    const [img,setimg] = useState('');
+    const notimageborder = "data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='50' ry='50' stroke='%23333' stroke-width='7' stroke-dasharray='18' stroke-dashoffset='30' stroke-linecap='square'/%3e%3c/svg%3e"
+    const [img,setimg] = useState(notimageborder);
     console.log(preimg)
         const onChangeFiles = useCallback(
       (e) => {
@@ -106,37 +107,35 @@ import '../scss/DragDrop.scss'
       return () => resetDragEvents();
     }, [initDragEvents, resetDragEvents]);
      // 위에서 선언했던 files state 배열을 deps에 넣어줍니다.
+
     useEffect(()=>{
-      if(f!==''){
-      setforward('forword');
-      setborders('bord');
-      preview();
-      }
-      
-    },[f])
-    useEffect(()=>{
+    console.log(preimg)
     if(f.length>0&&preimg!==''){
     const imgurl = URL.createObjectURL(preimg);
     setimg(imgurl);
-    }},[preimg])
-    const preview = () => {
-      if(f!=='') return false;
-      const imgEl = document.querySelector('.DragDrop');
-      const text = document.querySelector('.fileclassListuploadtext');
-      
-     
-
+    setforward('forword');
+      setborders('bord');
     }
-
+    else{
+      setforward('');
+     setborders('');
+     console.log(preimg)
+     setimg(notimageborder)
+     }}
+  ,[preimg])
+   
+  function changeimg(){
+    console.log(img)
+    return img;
+  }
 
     
     return (
       
-      <div className={classNames('DragDrop',{forward},{borders},'longfade-in-box',(f.length>0)?'Dragdroppre':'Dragdropnotpre')}
-      style={{ 
-        backgroundImage: `url(${img})` }}
+      <div className={classNames('DragDrop',{forward},{borders},'longfade-in-box',(f.length>0)?'Dragdroppre':'Dragdropnotpre',((f.length>0)&&(preimg!==''))?'':'notfileborder')}
+     
       >
-       
+     
         <input
           type="file"
           id="fileUpload"
@@ -147,22 +146,29 @@ import '../scss/DragDrop.scss'
         />
         
         <label
+        id = "previewlabel"
           className={isDragging ? "DragDrop-File-Dragging" : "DragDrop-File"}
           // 드래그 중일때와 아닐때의 클래스 이름을 다르게 주어 스타일 차이
-     
+          style={{ 
+            width: "100%", height: "100%", display:"block",
+             }}
           htmlFor="fileUpload"
           ref={dragRef}
           onDragEnter={(e) => { e.preventDefault(); e.stopPropagation(); console.log('onDragEnter')}}
                 onDragOver={(e) => { e.preventDefault(); e.stopPropagation(); console.log('dragover') }} // 추가한 이벤트. onDrop을 위해선 반드시 필요함.
-                onDrop={(e) => { e.preventDefault(); e.stopPropagation(); console.log('drop') }} style={{ width: "100%", height: "100%", display:"block" }}
+                onDrop={(e) => { e.preventDefault(); e.stopPropagation(); console.log('drop') }} 
         >
-         <div className={classNames('fileuploadtext',(preimg!=='')?'nodisplay':'')}>  
+         {((f.length>0)&&(preimg!==''))? <div id = "previewimage" className='longfade-in-box' style={{ 
+            width: "99%", height: "100%",
+            backgroundImage: `url(${changeimg()})` }}> 
+          </div>:null}
+         <div className={classNames('fileuploadtext',(preimg!==''&&f.length>0)?'nodisplay':'')}>  
           drag or click to add image</div>
+         
         </label>
-    
-    
+        {(f.length>0&&preimg!=='')?<div id = "dropguide" className='fade-in-box'>↑ drag or click to change photo</div>:null}
     </div>
-  
+    
     );
   };
 export default DragDrop;

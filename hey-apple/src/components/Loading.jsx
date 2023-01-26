@@ -47,9 +47,10 @@ function Loading({name,color,setheadbg}){
     <div id = "loadingspinner">
     </div>
     <div id = "loadingmessage" >
-      <span className='loadmessage loadfade'>{loadmessage}</span>
+      <span className='loadmessage'>{loadmessage}</span>
       <span className='loadspots'>{'.'.repeat(spot)}</span>
     </div>
-  </div>)
+  </div>
+  )
 }
 export default Loading;

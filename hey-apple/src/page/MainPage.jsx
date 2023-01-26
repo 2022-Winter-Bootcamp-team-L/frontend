@@ -10,6 +10,8 @@ import Loading from '../components/Loading';
 import ImagePreview from '../components/ImagePreview';
 import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
+import { useNavigate } from 'react-router-dom';
+import useInterval from '../components/useInterVal';
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [dropbox,setdropbox] = useState(false);
@@ -18,7 +20,9 @@ function MainPage() {
   const [f,setf] = useState("");
   const [loading,setLoading] = useState(false);
   const [preimg,setpreimg] = useState("");
+  const navigate = useNavigate()
   const dis = "nodisplay";
+  useEffect(()=>{console.log(preimg)},[f])
     function handlemainclicked() {
     setdropbox(true)
     setlogotrans(true)
@@ -49,7 +53,8 @@ function MainPage() {
   withCredentials: true 
 }
     ).then((response)=>{
-      console.log(response)}
+        navigate(`/result/${response.data.task_id}`)
+    }
       );
 
   
@@ -70,7 +75,7 @@ function MainPage() {
     
      {(loading===false)?     <div id = "intrologoimage" ref={introimage} className={classNames((dropbox==false)?'fade-in-box':"",(logotrans===false&&dropbox==true)?"logoflex":"",(logotrans==true&&dropbox==true)?"logotrans":"")} />:null} 
    
-     {(dropbox&&loading===false)? <DragDrop f = {f} setf={setf} preimg = {preimg} loading={loading}/> :null}
+     {(dropbox&&loading===false)? <DragDrop f = {f} setf={setf} preimg = {preimg} loading={loading} setpreimg={setpreimg}/> :null}
      
 
      
