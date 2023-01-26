@@ -62,9 +62,6 @@ function MainPage() {
   setdropbox(true)
   }
   }
-  useInterval(()=>{
-    console.log('ㅈ같다');
-  },null)
   return (
   <div id="mainwrap">
       <Header/>
