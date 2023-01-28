@@ -7,18 +7,18 @@ import { ResponsiveBar } from '@nivo/bar'
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const Graph = ({ data /* see data tab */,dates }) => 
+const Graph = ({ data /* see data tab */ }) => 
     (
     <ResponsiveBar
         data={data}
         keys={[
-            'day1',
-            'day2',
-            'day3',
-            'day4',
-            'day5',
-            'day6',
-            'day7'
+            'date1',
+            'date2',
+            'date3',
+            'date4',
+            'date5',
+            'date6',
+            'date7'
         ]}
         indexBy="date"
         margin={{ top: 30, right: 0, bottom: 50, left: 50 }}
