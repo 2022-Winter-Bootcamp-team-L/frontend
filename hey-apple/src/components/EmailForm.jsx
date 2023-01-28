@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import '../scss/EmailForm.scss'
+import "../scss/EmailForm.scss";
+import DialogDivider from "./DialogDivider";
 
-function EmailForm() {
-  const [email, setEmail] = useState("joohee11014@naver.com");
+export default function EmailForm() {
+  const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
-  const [orderpaymentId, setOrderpaymentId] = useState("");
+  const [orderpaymentId, setOrderPaymentId] = useState("");
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -31,38 +32,51 @@ function EmailForm() {
 
   return (
     <div>
-      <button onClick={handleClickOpen}> get receipt by email </button>
-      <dialog id="dialog" open={open}>
+      <button id="payment_button" onClick={handleClickOpen}>
+        PAY
+      </button>
+      <dialog
+        id="email_dialog"
+        open={open}
+        onClose={handleClose}
+      >
         <form onSubmit={handleSubmit}>
-          <label>
-            Email:
-            <textarea
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
+          <div id="dialog_header">
+            Receipt
+          </div>
+          <DialogDivider/>
+          <div id="dialog_text">
+            Your payment was successful.
+            <br />
+            If you want a digital receipt,
+            <br />
+            enter your email address below.
+          </div>
+          <textarea
+            id="textarea"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
           <br />
-          <label>
+          {/* <label>
             orderpayment_id:
             <textarea
-              style={{
-                background: "#FFB986",
-              }}
+              id="textarea"
               value={orderpaymentId}
-              onChange={(e) => setOrderpaymentId(e.target.value)}
+              onChange={(e) => setOrderPaymentId(e.target.value)}
             />
-          </label>
-          <br />
-          <button id="dialog_inner_btn" type="submit">
+          </label> */}
+        </form>
+        <div id="dialog_inner_layout">
+          <button id="dialog_btn" type="submit" onClick={handleSubmit}>
             SUBMIT
           </button>
-          <br/>
-          <button id="dialog_inner_btn" type="button" onClick={handleClose}>CANCEL</button>
-        </form>
+          <button id="dialog_btn" onClick={handleClose}>
+            CANCEL
+          </button>
+        </div>
       </dialog>
     </div>
   );
 }
-
-export default EmailForm;
