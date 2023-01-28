@@ -7,7 +7,8 @@ import React, {useState,
   import { useLocation,useNavigate } from 'react-router-dom';
 import { useParams } from 'react-router-dom'; 
 import axios from 'axios'
-axios.get('http://localhost:8000/api/v1/fruits/12')
+import axiosCustom from '../apis/axiosCustom';
+axiosCustom.post('/api/v1/fruits/12')
 .then(function (response) {
   // 성공 핸들링
   console.log(response);
