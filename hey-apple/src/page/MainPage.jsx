@@ -8,6 +8,7 @@ import classNames from 'classnames';
 import DragDrop from '../components/DragDrop';
 import Loading from '../components/Loading';
 import ImagePreview from '../components/ImagePreview';
+import axiosCustom from '../apis/axiosCustom'
 import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 import { useNavigate } from 'react-router-dom';
@@ -43,8 +44,10 @@ function MainPage() {
     try{
     setdropbox(false);
     setLoading(true);
-    await axios.post(
-      'http://localhost/api/v1/orders/tasks',
+
+    await axiosCustom.post(
+      '/api/v1/orders/tasks',
+      
        formData, {
   headers: {
     'Content-Type': 'multipart/form-data'

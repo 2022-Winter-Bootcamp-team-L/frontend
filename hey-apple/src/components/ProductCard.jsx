@@ -6,12 +6,13 @@ import React, {useState,
   import { useNavigate } from 'react-router-dom';
 
 import '../scss/Products.scss' 
-function ProductCard({name,color,setheadbg}){
+function ProductCard({id, name,color,setheadbg}){
   const navigate = useNavigate();
   const imgurl = `/image/${name}.png`;
   function move(){
     navigate(`/productdetail/${name}`,{
       state: {
+        id: `${id}`,
         color: `${color}`,
         image: `${imgurl}`
         }
