@@ -44,7 +44,7 @@ function MainPage() {
     setdropbox(false);
     setLoading(true);
     await axios.post(
-      'http://localhost:8000/api/v1/orders/tasks',
+      'http://localhost/api/v1/orders/tasks',
        formData, {
   headers: {
     'Content-Type': 'multipart/form-data'
