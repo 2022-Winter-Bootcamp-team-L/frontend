@@ -45,7 +45,7 @@ function MainPage() {
     setdropbox(false);
     setLoading(true);
     await axiosCustom.post(
-      ':80/api/v1/orders/tasks',
+      '/api/v1/orders/tasks',
        formData, {
   headers: {
     'Content-Type': 'multipart/form-data'

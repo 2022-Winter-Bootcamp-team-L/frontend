@@ -1,16 +1,15 @@
 import Graph from '../components/Graph'
 import '../scss/Graph.scss'
-import data from './data'
 import Header from '../components/Header'
 import { useState } from 'react'
 import axios from 'axios'
+import { useEffect } from 'react'
 function GraphPage(){
-  // const [data,setdata] = useState();
   const [fruitsearch,setsearch] = useState('Apple')
   const [buttonsdisplay, setdisplay] = useState(1);
+  const [data,setdata] = useState('')
   const url = `http://localhost:9200/heyapple/_search?q=name:${fruitsearch}`
-  console.log(url)
-  // axios.get(`http://localhost:9200/heyapple/_search?q=name:${fruitsearch}`).then(response => {setdata(response.data)})
+  useEffect(()=>{  axios.get(url).then(response => {setdata(response.data)})},[fruitsearch]);
   const firstdata = data.hits.hits[0]._source
   const manufactured = []
   manufactured.push({"date":firstdata.date1,"date1":firstdata.avg,})
@@ -20,9 +19,6 @@ function GraphPage(){
   manufactured.push({"date":firstdata.date5,"date5":firstdata.price5,})
   manufactured.push({"date":firstdata.date6,"date6":firstdata.price6,})
   // manufactured.push({"date":firstdata.date7,"date7":firstdata.price7,})
-  console.log(fruitsearch)
-console.log(firstdata)
-console.log(manufactured)
 const changebuttons =  () =>{
   (buttonsdisplay==1)?setdisplay(2):setdisplay(1);
 }
