@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../scss/EmailForm.scss";
 import DialogDivider from "./DialogDivider";
+import SendId from "../page/ResultPage";
 
-export default function EmailForm() {
+export default function EmailForm({id}) {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
-  const [orderpaymentId, setOrderPaymentId] = useState("");
-
+  console.log(id)
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -20,7 +20,7 @@ export default function EmailForm() {
     e.preventDefault();
     axios
       .get(
-        `http://localhost:8000/api/v1/bills?email=${email}&orderpayment_id=${orderpaymentId}`
+        `http://localhost/api/v1/bills?email=${email}&orderpayment_id=${id}`
       )
       .then((response) => {
         console.log(response);
@@ -39,6 +39,10 @@ export default function EmailForm() {
         id="email_dialog"
         open={open}
         onClose={handleClose}
+        style={{position: "absolute",
+        top: "7vh",
+        left: "-54vw"}}
+        
       >
         <form onSubmit={handleSubmit}>
           <div id="dialog_header">
@@ -58,23 +62,16 @@ export default function EmailForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <br />
-          {/* <label>
-            orderpayment_id:
-            <textarea
-              id="textarea"
-              value={orderpaymentId}
-              onChange={(e) => setOrderPaymentId(e.target.value)}
-            />
-          </label> */}
         </form>
-        <div id="dialog_inner_layout">
-          <button id="dialog_btn" type="submit" onClick={handleSubmit}>
-            SUBMIT
-          </button>
-          <button id="dialog_btn" onClick={handleClose}>
-            CANCEL
-          </button>
+        <div>
+          <div id="dialog_btn_layout" onClick={handleClose}>
+            <button id="dialog_btn" type="submit" onClick={handleSubmit}>
+              SUBMIT
+            </button>
+            <button id="dialog_btn" onClick={handleClose}>
+              CANCEL
+            </button>
+          </div>
         </div>
       </dialog>
     </div>
