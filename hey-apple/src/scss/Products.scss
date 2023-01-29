@@ -52,7 +52,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: 'Inter';
+  font-family: 'Quicksand';
   font-style: normal;
   line-height: 85px;
   letter-spacing: 0.2em;
@@ -76,7 +76,7 @@
   border-radius: 3.0rem;
   position: relative;
   transition: all 0.2s linear;
-  cursor:pointer;
+  cursor:poQuicksand;
 }
 #productcard:hover{
   transform: scale(1.1);
@@ -161,7 +161,7 @@ button{
   height:0.7rem;
   border-radius:10rem;
   background-color:#ffcbcb;
-  cursor:pointer;
+  cursor:poQuicksand;
   border:none;
 }
 
