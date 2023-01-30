@@ -15,6 +15,9 @@ function Header() {
   <div id = "header_products" onClick={()=>{navigate('/products')}} style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
       products
   </div>
+  <div id = "header_statistics" onClick = {()=>{navigate('/graph')}}  style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>statistics</div>
+    
+
   </div>
 </div>
   );

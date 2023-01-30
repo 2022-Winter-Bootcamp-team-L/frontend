@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../scss/EmailForm.scss";
 import DialogDivider from "./DialogDivider";
+import axiosCustom from "../apis/axiosCustom";
 import SendId from "../page/ResultPage";
+
 
 export default function EmailForm({id}) {
   const [email, setEmail] = useState("");
@@ -18,9 +20,10 @@ export default function EmailForm({id}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    axios
+    axiosCustom
       .get(
-        `http://localhost/api/v1/bills?email=${email}&orderpayment_id=${id}`
+        `/api/v1/bills?email=${email}&orderpayment_id=${orderpaymentId}`
+
       )
       .then((response) => {
         console.log(response);

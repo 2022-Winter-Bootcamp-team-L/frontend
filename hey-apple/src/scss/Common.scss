@@ -42,18 +42,24 @@ cursor:pointer;
 }
 #header_home{
   width:5rem;
-  right:24rem;
+  right:30rem;
   @include headerscommon();
 }
 #header_aboutus{
   width:8rem;
  
-  right:13rem;
+  right:19rem;
   @include headerscommon();
 }
 #header_products{
   width:7rem;
   
-  right:4.5rem;
+  right:10.5rem;
+  @include headerscommon();
+}
+#header_statistics{
+  width:7rem;
+  
+  right:5.5rem;
   @include headerscommon();
 }

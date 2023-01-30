@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosCustom = axios.create({
-  baseURL: 'http://localhost',
+  baseURL: 'http://svheyapple.com',
 });
 
 export default axiosCustom;
