@@ -27,7 +27,7 @@ const Graph = ({ data /* see data tab */ ,name,color}) =>
         ]}
         
         indexBy="date"
-        margin={{ top: 30, right: 0, bottom: 50, left: 50 }}
+        margin={{ top: 30, right: 50, bottom: 50, left: 60 }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
@@ -114,7 +114,7 @@ const Graph = ({ data /* see data tab */ ,name,color}) =>
             tickRotation: 0,
             legend: 'price',
             legendPosition: 'middle',
-            legendOffset: -40
+            legendOffset: -50
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
