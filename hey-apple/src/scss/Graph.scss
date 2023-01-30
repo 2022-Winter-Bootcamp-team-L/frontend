@@ -1,0 +1,131 @@
+#graphwrap{
+  width:100%;
+  height:100%;
+  background: #FFFDF2;
+  position:absolute;
+}
+#graphposition{
+  width:60%;
+  height:60%;
+  position:absolute;
+  left:50%;
+  top:15%;
+  transform: translate(-50%,0);
+
+}
+#graphbuttonscontainer{
+  position:absolute;
+  width:70%;
+  height:20%;
+  bottom:5%;
+  left:50%;
+  transform: translate(-50%,0);
+  background-color: #B3DE69;
+  border-radius: 2rem;
+  
+}
+#graphbuttons{
+  width:90%;
+  height:80%;
+  background-color: #FFFDF2;
+  position:absolute;
+  left:50%;
+  top: 50%;
+  border-radius: 1rem;
+  
+  transform: translate(-50%,-50%);
+  overflow: hidden;
+ &::-webkit-scrollbar {
+ width: 0.5rem;
+ height: 0.8rem;
+ border-radius: 0.4rem;
+ background: rgba(158, 197, 124);
+}
+&::-webkit-scrollbar-thumb {
+ background: rgba(0, 0, 0, 0.3);
+ border-radius: 0.4rem;
+}
+}
+#eachbuttons{
+  width:13%;
+display: inline-block;
+height:auto;
+margin-left: 3.1%;
+}
+#eachbuttonsratio{
+  padding-top:100%;
+
+}
+#eachbuttonsimage{
+  width: inherit;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#buttonscontainer{
+  width:100%;
+  height:auto;
+  transform: translate(0,-50%);
+  top:50%;
+  position:absolute;
+}
+#graphleft{
+  position:absolute;
+  left:0;
+  width:3.4vw;
+  height:3vw;
+  background-color: red;
+  top:50%;
+  transform: translate(0,-50%);
+  font-size: 3.2vw;
+  text-align: center;
+}
+#graphright{
+  position:absolute;
+  right:0;
+  width:3.4vw;
+  height:3vw;
+  background-color: blue;
+  top:50%;
+  transform: translate(0,-50%);
+}
+.product{
+  width:13%;
+  height: 100%;
+  margin-bottom : 4%;
+  /* border: 1px solid black; */
+}
+.product_img_div{
+  text-align: center;
+}
+.product_img{
+  max-width:95%;
+  max-height:100%;
+}
+.product_title{
+  font-size : 1.3rem;
+  font-weight: 600;
+  margin : 4%;
+}
+.product_des{
+  font-size : 0.8rem;
+  margin : 2% 3% 2% 4%;
+}
+.product_mon{
+  font-size : 1rem;
+  margin : 2% 3% 1% 4%;
+}
+.product_link_div{
+  text-align: center;
+}
+.product_link{
+  position:inherit;
+  font-size : 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  background : #0B5ED9;
+  color : white;
+  border-radius : 10px;
+  padding :5px;
+}

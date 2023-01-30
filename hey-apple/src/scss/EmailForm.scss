@@ -1,0 +1,102 @@
+#email_dialog {
+  width: 25vw;
+  height: 16vw;
+  background-color: #fff1d7;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 1.2vw;
+  display: flexbox;
+  border-color: transparent;
+  text-align: center;
+  justify-content: center;
+  overflow: hidden;
+  position: absolute;
+}
+
+#dialog_btn {
+  background-color: transparent;
+  font-family: "Quicksand";
+  font-weight: bolder;
+  color: #ffb986;
+  margin-right: 0.2vw;
+  font-size: 1.2vw;
+  width: fit-content;
+  height: fit-content;
+}
+
+#textarea {
+  background-color: #ffb986;
+  font-family: "Quicksand";
+  font-size: 1.5vw;
+  font-weight: 600;
+  border-color: transparent;
+  border-radius: 0.6vw;
+  text-align: center;
+  text-align: middle;
+  justify-content: center;
+  width: 22vw;
+  height: 2.2vw;
+  margin-bottom: 1vw;
+  resize: none;
+}
+
+#textarea:focus {
+  outline: none;
+}
+
+#payment_button{
+  position: relative;
+  width: 10vw;
+  height: 3vw;
+  background: #D9D9D9;
+  border-radius: 0.8vw;
+  border-style: none;
+  font-size: 1.45vw;
+  font-family: 'Quicksand';
+  text-align: center;
+  font-weight: 600;
+  bottom: 0vw;
+}
+
+#dialog_header{
+  font-size: 1.6vw;
+  font-family: 'Quicksand';
+  font-weight: bold;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 0.8vw;
+}
+
+#dialog_text{
+  font-size: 1.5vw;
+  font-family: 'Quicksand';
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 0.5vw;
+  margin-bottom: 1vw;
+}
+
+#dialog_btn_layout{
+  display: flex;
+  flex-direction: row;
+  // justify-content: flex-start;
+  width: fit-content;
+  height: fit-content;
+}
+
+#dialog_btn_layout{
+  display: flex;
+  flex-direction: row;
+  margin-left: 13vw;
+}
+
+#divider_line{
+  position: absolute;
+  width: 22vw;
+  height: 0.05vw;
+  background: #000000;
+  display: flex;
+  justify-content: center;
+}

@@ -6,6 +6,7 @@ import React, {useState,
   import { useNavigate } from 'react-router-dom';
 
 import '../scss/Products.scss' 
+
 function ProductCard({id,name,color,setheadbg}){
   const navigate = useNavigate();
   const imgurl = `/image/${name}.png`;

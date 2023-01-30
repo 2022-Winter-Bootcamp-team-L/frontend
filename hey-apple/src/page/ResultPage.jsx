@@ -10,22 +10,26 @@ import axios from 'axios';
 import useInterval from '../components/useInterVal';
 import Loading from '../components/Loading';
 import ResultsBox from '../components/ResultsBox'
+import axiosCustom from '../apis/axiosCustom';
+
 function ResultPage(){
   const {id} = useParams();
   const [data,setdata] = useState('');
   const [loading,setloading] = useState();
   const [length, setlength] = useState(0);
   const [delay, setdelay] = useState(2000);
-  const geturl = `http://localhost:8000/api/v1/orders/tasks/${id}`;
   const [fruitnames,setfruitnames] = useState();
   const [fruitimages,setfruitimages] = useState();
   const [fruitvalues,setfruitvalues] = useState();
   const [totalprice,settotal] = useState(0);
+  const [fruitid,setfruitid] = useState('');
+ useEffect(()=>{setfruitid(id)},[])
+
   function delaytime(){
     return (length<=1)?1000:null
   }
   useEffect(()=>{
-      axios.get(geturl).then(response => {setdata(response.data)})
+      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data)})
       
       if(length<=1){
         setloading(true)
@@ -39,7 +43,7 @@ function ResultPage(){
       useInterval(()=>{
       
       if(length<=1){
-      axios.get(geturl).then(response=>{setdata(response.data)});
+        axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data)})
       setloading(true);
       console.log(data)
       setlength(Object.keys(data).length)
@@ -86,7 +90,7 @@ settotal(total);
           </div>)})}
         </div>
       </div>):null}
-      {(loading==false)?(<ResultsBox keys = {fruitnames} values = {fruitvalues} total = {totalprice}/>):null}
+      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice}/>):null}
     </div>
   );
 }
