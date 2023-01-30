@@ -16,12 +16,12 @@ function GraphPage(){
   const getgraph = async() => {
     const firstdata = data.hits.hits[0]._source
     const tempArr = []
-    tempArr.push({"date":firstdata.date6,"date6":firstdata.price6,})
-    tempArr.push({"date":firstdata.date5,"date5":firstdata.price5,})
-    tempArr.push({"date":firstdata.date4,"date4":firstdata.price4,})
-    tempArr.push({"date":firstdata.date3,"date3":firstdata.price3,})
-    tempArr.push({"date":firstdata.date2,"date2":firstdata.price2,})
-    tempArr.push({"date":firstdata.date1,"date1":firstdata.avg,})
+    tempArr.push({"date":firstdata.date6,"date1":firstdata.price6,})
+    tempArr.push({"date":firstdata.date5,"date2":firstdata.price5,})
+    tempArr.push({"date":firstdata.date4,"date3":firstdata.price4,})
+    tempArr.push({"date":firstdata.date3,"date4":firstdata.price3,})
+    tempArr.push({"date":firstdata.date2,"date5":firstdata.price2,})
+    tempArr.push({"date":firstdata.date1,"date6":firstdata.avg,})
     setmanufactured(tempArr)
     };
     // manufactured.push({"date":firstdata.date7,"date7":firstdata.price7,})
@@ -41,7 +41,7 @@ return (<div id = "graphwrap">
   
   <div id = "graphposition">
   <div id = "graphname">{fruitsearch}</div>
-<Graph data = {manufactured}/>
+<Graph data = {manufactured} name = {fruitsearch}/>
 </div>
 <div id = "graphbuttonscontainer">
 <div id = "graphleft" onClick={()=>{changebuttons()}}>
@@ -69,15 +69,18 @@ function ButtonsContainer({display,setsearch,btn1,btn2}){
     <div id = "buttonscontainer">
    {(display==1)? (btn1.map(function(a,i){
       let image = `/image/${btn1[i].toUpperCase()}.png`
-    return(<div onClick={()=>{setsearch(btn1[i])}} id="eachbuttons" >
+    return(<div onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
     <div id = "eachbuttonsratio"></div>
-   <div id = "eachbuttonsimage"><img width = "100%" height="100%" src={image}/></div>
+   <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={image}/></div>
 </div>);
     })):(btn2.map(function(a,i){
       let image = `/image/${btn2[i].toUpperCase()}.png`
-    return(<div onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons">
+      let buttonposition = 'defaultline';
+      if(i==4){buttonposition='fixline'}
+      if(i==5){buttonposition='fixline2'}
+    return(<div onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
     <div id = "eachbuttonsratio"></div>
-   <div id = "eachbuttonsimage"><img width = "100%" height="100%" src={image}/></div>
+   <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={image}/></div>
 </div>);}))}
     </div>
   );

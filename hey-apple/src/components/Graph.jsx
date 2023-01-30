@@ -7,10 +7,13 @@ import { ResponsiveBar } from '@nivo/bar'
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const Graph = ({ data /* see data tab */ }) => 
+
+const Graph = ({ data /* see data tab */ ,name}) => 
     (
     <ResponsiveBar
+   
         data={data}
+        name = {name}
         keys={[
             'date1',
             'date2',
@@ -22,12 +25,27 @@ const Graph = ({ data /* see data tab */ }) =>
            
 
         ]}
+        
         indexBy="date"
         margin={{ top: 30, right: 0, bottom: 50, left: 50 }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={['olive', 'brown', 'orange']}
+        colors={{ scheme: 'nivo' }} 
+        // colors={['olive', 'brown', 'orange']
+        colorBy="indexValue"
+        theme={{
+            /**
+             * label style (bar에 표현되는 글씨)
+             */
+            labels: {
+                text: {
+                    fontSize: 0,
+                    fill: '#000000',
+                },
+            },
+            
+            }}
         defs={[
             {
                 id: 'dots',
@@ -66,7 +84,20 @@ const Graph = ({ data /* see data tab */ }) =>
                 ]
             ]
         }}
-       
+        tooltip={({ indexValue, value, color}) => (
+            <div
+                style={{
+                    padding: 12,
+                    color,
+                    background: '#222222',
+                }}
+            >
+                <span>{name}'s price</span>
+                <br />
+                <strong>
+                    {indexValue}: ₩{value}
+                </strong>
+            </div>)}
         axisTop={null}
         axisRight={null}
         axisBottom={{
