@@ -4,7 +4,7 @@ import Header from '../components/Header'
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import axiosCustom from '../apis/axiosCustom'
+import data from './data'
 function GraphPage(){
   const [fruitsearch,setsearch] = useState('Apple')
   const [buttonsdisplay, setdisplay] = useState(1);
@@ -14,20 +14,18 @@ function GraphPage(){
   useEffect(()=>{getgraph()},[fruitsearch])
   
   const getgraph = async() => {
-    await axiosCustom.get('/heyapple/_search?q=name:${fruitsearch}').then(response => {
-    const firstdata = response.data.hits.hits[0]._source
-    console.log('firstdata : ',firstdata)
+    const firstdata = data.hits.hits[0]._source
     const tempArr = []
-    tempArr.push({"date":firstdata.date1,"date6":firstdata.avg,})
-    tempArr.push({"date":firstdata.date2,"date5":firstdata.price2,})
-    tempArr.push({"date":firstdata.date3,"date4":firstdata.price3,})
-    tempArr.push({"date":firstdata.date4,"date3":firstdata.price4,})
-    tempArr.push({"date":firstdata.date5,"date2":firstdata.price5,})
-    tempArr.push({"date":firstdata.date6,"date1":firstdata.price6,})
+    tempArr.push({"date":firstdata.date6,"date6":firstdata.price6,})
+    tempArr.push({"date":firstdata.date5,"date5":firstdata.price5,})
+    tempArr.push({"date":firstdata.date4,"date4":firstdata.price4,})
+    tempArr.push({"date":firstdata.date3,"date3":firstdata.price3,})
+    tempArr.push({"date":firstdata.date2,"date2":firstdata.price2,})
+    tempArr.push({"date":firstdata.date1,"date1":firstdata.avg,})
     setmanufactured(tempArr)
-    });
+    };
     // manufactured.push({"date":firstdata.date7,"date7":firstdata.price7,})
-  }
+  
 
 
 const changebuttons =  () =>{
@@ -40,7 +38,9 @@ const changebuttons =  () =>{
   
 return (<div id = "graphwrap">
   <Header/>
+  
   <div id = "graphposition">
+  <div id = "graphname">{fruitsearch}</div>
 <Graph data = {manufactured}/>
 </div>
 <div id = "graphbuttonscontainer">

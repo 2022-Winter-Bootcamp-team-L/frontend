@@ -18,14 +18,16 @@ const Graph = ({ data /* see data tab */ }) =>
             'date4',
             'date5',
             'date6',
-            'date7'
+            
+           
+
         ]}
         indexBy="date"
         margin={{ top: 30, right: 0, bottom: 50, left: 50 }}
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'set3' }}
+        colors={['olive', 'brown', 'orange']}
         defs={[
             {
                 id: 'dots',
