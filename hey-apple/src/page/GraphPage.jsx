@@ -9,7 +9,14 @@ function GraphPage(){
   const [fruitsearch,setsearch] = useState('Apple')
   const [buttonsdisplay, setdisplay] = useState(1);
   const [manufactured, setmanufactured] = useState([])
-
+  const graphcolors = {'Apple':'#FFCBCB','Avocado':'#B7C89B','Banana':'#FFF282','Grape':'#EFD3FF','Kiwi':'#D2E39F',
+  'Lemon':'#FFF8B9',
+  'Mandarine':'#FFBB58',
+  'Mango':'#FFDA58',
+  'Orange':'#FEC975',
+  'Pear':'#FFECA9',
+  'Persimmon':'#FFBB89','Pineapple':'#F6CF6B'}
+const [graphcolor,setcolor] = useState('#FFCBCB')
 
   useEffect(()=>{getgraph()},[fruitsearch])
   
@@ -25,6 +32,7 @@ function GraphPage(){
     tempArr.push({"date":firstdata.date2,"date5":firstdata.price2,})
     tempArr.push({"date":firstdata.date1,"date6":firstdata.avg,})
     setmanufactured(tempArr)
+    setcolor(graphcolors[`${fruitsearch}`])
     });
     // manufactured.push({"date":firstdata.date7,"date7":firstdata.price7,})
   }
@@ -43,7 +51,7 @@ const changebuttons =  () =>{
   
   <div id = "graphposition">
   <div id = "graphname">{fruitsearch}</div>
-<Graph data = {manufactured} name = {fruitsearch}/>
+<Graph data = {manufactured} name = {fruitsearch} color={graphcolor}/>
 </div>
 <div id = "graphbuttonscontainer">
 <div id = "graphleft" onClick={()=>{changebuttons()}}>
@@ -51,7 +59,13 @@ const changebuttons =  () =>{
       </div>
   <div id = "graphbuttons">
     <ButtonsContainer display = {buttonsdisplay} setsearch = {setsearch} btn1 = {graphbuttons1} btn2 = {graphbuttons2}/>
-
+      {/* {graphbuttons2.map(function(a,i){
+      let image = `/image/${graphbuttons2[i].toUpperCase()}.png`
+    return(<div id="eachbuttons">
+    <div id = "eachbuttonsratio"></div>
+  <div id = "eachbuttonsimage"><img width = "100%" height="100%" src={image}/></div>
+</div>);
+    })} */}
     </div>
     <div id = "graphright" onClick={()=>{changebuttons()}}>
     <img src={process.env.PUBLIC_URL + "/image/graph_forward.png"}/>
@@ -60,25 +74,25 @@ const changebuttons =  () =>{
 
 </div>
   )};
-  function ButtonsContainer({display,setsearch,btn1,btn2}){
-    return(
-      <div id = "buttonscontainer">
-     {(display==1)? (btn1.map(function(a,i){
-        let image = `/image/${btn1[i].toUpperCase()}.png`
-      return(<div onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
-      <div id = "eachbuttonsratio"></div>
-     <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={image}/></div>
-  </div>);
-      })):(btn2.map(function(a,i){
-        let image = `/image/${btn2[i].toUpperCase()}.png`
-        let buttonposition = 'defaultline';
-        if(i==4){buttonposition='fixline'}
-        if(i==5){buttonposition='fixline2'}
-      return(<div onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
-      <div id = "eachbuttonsratio"></div>
-     <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={image}/></div>
-  </div>);}))}
-      </div>
-    );
-  }
+function ButtonsContainer({display,setsearch,btn1,btn2}){
+  return(
+    <div id = "buttonscontainer">
+   {(display==1)? (btn1.map(function(a,i){
+      let image = `/image/${btn1[i].toUpperCase()}.png`
+    return(<div onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
+    <div id = "eachbuttonsratio"></div>
+   <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={image}/></div>
+</div>);
+    })):(btn2.map(function(a,i){
+      let image = `/image/${btn2[i].toUpperCase()}.png`
+      let buttonposition = 'defaultline';
+      if(i==4){buttonposition='fixline'}
+      if(i==5){buttonposition='fixline2'}
+    return(<div onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
+    <div id = "eachbuttonsratio"></div>
+   <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={image}/></div>
+</div>);}))}
+    </div>
+  );
+}
 export default GraphPage;

@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ResultPage from "./page/ResultPage";
 import GraphPage from './page/GraphPage';
 import GraphTest from "./page/GraphTest";
-
+import ResultsBoxTest from "./components/ResultBoxtest";
 function App() {
   return (
     <BrowserRouter>

@@ -8,7 +8,7 @@ import { ResponsiveBar } from '@nivo/bar'
 // website examples showcase many properties,
 // you'll often use just a few of them.
 
-const Graph = ({ data /* see data tab */ ,name}) => 
+const Graph = ({ data /* see data tab */ ,name,color}) => 
     (
     <ResponsiveBar
    
@@ -31,7 +31,7 @@ const Graph = ({ data /* see data tab */ ,name}) =>
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'nivo' }} 
+        colors={[color]} 
         // colors={['olive', 'brown', 'orange']
         colorBy="indexValue"
         theme={{

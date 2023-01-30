@@ -9,8 +9,14 @@ function GraphPage(){
   const [fruitsearch,setsearch] = useState('Apple')
   const [buttonsdisplay, setdisplay] = useState(1);
   const [manufactured, setmanufactured] = useState([])
-
-
+  const graphcolors = {'Apple':'#FFCBCB','Avocado':'#B7C89B','Banana':'#FFF282','Grape':'#EFD3FF','Kiwi':'#D2E39F',
+  'Lemon':'#FFF8B9',
+  'Mandarine':'#FFBB58',
+  'Mango':'#FFDA58',
+  'Orange':'#FEC975',
+  'Pear':'#FFECA9',
+  'Persimmon':'#FFBB89','Pineapple':'#F6CF6B'}
+const [graphcolor,setcolor] = useState('#FFCBCB')
   useEffect(()=>{getgraph()},[fruitsearch])
   
   const getgraph = async() => {
@@ -23,10 +29,9 @@ function GraphPage(){
     tempArr.push({"date":firstdata.date2,"date5":firstdata.price2,})
     tempArr.push({"date":firstdata.date1,"date6":firstdata.avg,})
     setmanufactured(tempArr)
+    setcolor(graphcolors[`${fruitsearch}`])
     };
     // manufactured.push({"date":firstdata.date7,"date7":firstdata.price7,})
-  
-
 
 const changebuttons =  () =>{
   (buttonsdisplay==1)?setdisplay(2):setdisplay(1);
@@ -41,7 +46,7 @@ return (<div id = "graphwrap">
   
   <div id = "graphposition">
   <div id = "graphname">{fruitsearch}</div>
-<Graph data = {manufactured} name = {fruitsearch}/>
+<Graph data = {manufactured} name = {fruitsearch} color={graphcolor}/>
 </div>
 <div id = "graphbuttonscontainer">
 <div id = "graphleft" onClick={()=>{changebuttons()}}>
