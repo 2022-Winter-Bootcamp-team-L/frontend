@@ -96,6 +96,7 @@
   top:25%;
   left:50%;
   transform:translate(-50%,0);
+
   width:70%;
   height:70%;
 
@@ -104,48 +105,40 @@
 
 #detailimagecontainer{
   width:100%;
-  height:25%;
+  height:45%;
   background-color: #FFCBCB;
   position: absolute;
   top:0;
 }
 .detailimage{
-  width:9%;
-  height: 50%;
+  width: 20%;
   position: absolute;
   top:50%;
-  left:61.5%;
+  left:50%;
   transform: translate(-50%,-50%);
 }
 .imagecontainer{
   padding-top: 90%;
 }
 #detailarrowleft{
-  top:10%;
-  left:3%;
-  width:1.5%;
-  height:15%;
+  top:3%;
+  left:1.5%;
+  width:2.5%;
+  height: 3vw;
   position: absolute;
 }
 #detailcontentcontainer{
-  top:25%;
+  top:45%;
   width:100%;
   height:55%;
   background-color: #fffef1;
   position: absolute;
 }
 #contentname{
-  font-size: var(--font-size-lg);
+  font-size:3.0rem;
   text-align : center;
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
-  text-align: center;
-  font-family: "Inter";
-  font-style: normal;
   width:100%;
-  font-weight:300;
+  margin-top:0.5rem;
 }
 #btninner{
   width:10rem;
@@ -160,7 +153,6 @@
   text-align : center;
   width:100%;
   margin-top:8rem;
-  white-space: pre-line
 }
 
 button{
