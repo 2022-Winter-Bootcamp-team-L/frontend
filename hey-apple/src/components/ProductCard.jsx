@@ -7,6 +7,7 @@ import React, {useState,
 
 import '../scss/Products.scss' 
 function ProductCard({layout,id,name,color,setheadbg}){
+
   const navigate = useNavigate();
   const imgurl = `/image/${name}.png`;
   console.log(id)

@@ -61,7 +61,7 @@ function Images({imagefile,file,setfile,preimg,setpreimg}){
      
 
   </div>
-  <div id = "deleteimg" onClick = {()=>{handleFilterFile(imagefile.id,imagefile.object,preimg)}}><img src={process.env.PUBLIC_URL + "/image/xsymbol.png"} alt = "이미지안나옴"/></div>
+  <div id = "deleteimg" onClick = {()=>{handleFilterFile(imagefile.id,imagefile.object,preimg)}}><img src={process.env.PUBLIC_URL + "/image/xsymbol.png"} width="100%" height="100%" alt = "이미지안나옴"/></div>
   </div>)
 }
 export default ImagePreview;

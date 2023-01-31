@@ -6,10 +6,8 @@ import React, {
   useRef
 } from 'react';
 import '../scss/Products.scss'
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-
 
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([{ layout: 0, id: 1, name: "APPLE", color: "#FFCBCB" }, { layout: 1, id: 12, name: "AVOCADO", color: "#B7C89B" }, {
@@ -143,10 +141,7 @@ function ProductDetail() {
         {forwardinfo[0]} {'>'}
       </div>
     </div>
-
-
   )
-
 }
 
 export default ProductDetail;

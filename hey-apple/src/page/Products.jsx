@@ -15,6 +15,7 @@ function Products() {
                   "PEAR",color:"#FFECA9"},{layout:11, id:11,name:
                     "PERSIMMON",color:"#FFBB89"},{layout:12, id:7,name:
                       "PINEAPPLE",color:"#F6CF6B"}]);
+
   const [headbg,setheadbg] = useState("#FFF1D7");
 return (
   <div id = "productwrap">
@@ -27,6 +28,7 @@ return (
     <div id = "productscontents" >
       {productinfo.map(function(a,i){
         return(<ProductCard layout = {i} id={productinfo[i].id} name = {productinfo[i].name} color={productinfo[i].color} setheadbg = {setheadbg}/>);
+
       })
     }
     </div>

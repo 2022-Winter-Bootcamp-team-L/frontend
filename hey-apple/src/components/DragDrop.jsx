@@ -5,7 +5,7 @@ import React, {useState,
   ChangeEvent,
   useRef} from 'react';
 import '../scss/DragDrop.scss' 
-  const DragDrop = ({f,setf,preimg,loading}) => {
+  const DragDrop = ({f,setf,preimg,loading,setpreimg}) => {
     // 드래그 중일때와 아닐때의 스타일을 구분하기 위한 state 변수
     const [isDragging, setIsDragging] = useState(false);
     const [files, setFiles] = useState('');
@@ -40,6 +40,7 @@ import '../scss/DragDrop.scss'
           ];
         }
           setf(tempFiles);
+          setFiles(selectFiles);
       }
       },
       [f]
@@ -126,7 +127,20 @@ import '../scss/DragDrop.scss'
      setimg(notimageborder)
      }}
   ,[preimg])
+  function preview(){
+    if(!files) return false;
+    const imgEl = document.querySelector('#previewimage');
+    const text = document.querySelector('.fileuploadtext');
+    document.querySelector(".fileuploadtext").classList.add("nodisplay")
+
    
+    setpreimg(files[0]);
+   
+  }
+ useEffect(()=>{
+  preview();
+
+},[files]);
   function changeimg(){
     console.log(img)
     return img;

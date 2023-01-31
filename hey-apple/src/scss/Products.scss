@@ -2,6 +2,7 @@
   --font-size-lg: 2rem;
   --font-size-md: 1.5rem;
   --font-size-sm: 1rem;
+  
 }
 @media (min-width: 27rem) {
   :root {
@@ -78,7 +79,7 @@
   border-radius: 3.0rem;
   position: relative;
   transition: all 0.2s linear;
-  cursor:pointer;
+  cursor:poQuicksand;
 }
 #productcard:hover{
   transform: scale(1.1);
@@ -99,7 +100,10 @@
   transform:translate(-50%,0);
   width:70%;
   height:70%;
+
+
 }
+
 #detailimagecontainer{
   width:100%;
   height:25%;
@@ -116,12 +120,7 @@
   transform: translate(-50%,-50%);
 }
 .imagecontainer{
-  padding-top:50%;
-}
-img{
-  position: absolute; top:0; left: 0;
-  width: 100%;
-  height: 100%;
+  padding-top: 90%;
 }
 #detailarrowleft{
   top:10%;
@@ -175,7 +174,7 @@ button{
   height:0.7rem;
   border-radius:10rem;
   background-color:#ffcbcb;
-  cursor:pointer;
+  cursor:poQuicksand;
   border:none;
 }
 
