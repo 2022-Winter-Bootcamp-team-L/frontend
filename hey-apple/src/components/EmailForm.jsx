@@ -22,7 +22,7 @@ export default function EmailForm({id}) {
     e.preventDefault();
     axiosCustom
       .get(
-        `/api/v1/bills?email=${email}&orderpayment_id=${orderpaymentId}`
+        `/api/v1/bills?email=${email}&orderpayment_id=${id}`
 
       )
       .then((response) => {
