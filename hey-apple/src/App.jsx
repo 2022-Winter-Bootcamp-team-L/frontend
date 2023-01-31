@@ -5,8 +5,6 @@ import Products from "./page/Products";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ResultPage from "./page/ResultPage";
 import GraphPage from './page/GraphPage';
-import GraphTest from "./page/GraphTest";
-
 function App() {
   return (
     <BrowserRouter>

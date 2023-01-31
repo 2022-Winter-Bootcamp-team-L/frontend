@@ -44,7 +44,6 @@
   border-radius: 1rem;
   
   transform: translate(-50%,-50%);
-  overflow: hidden;
  &::-webkit-scrollbar {
  width: 0.5rem;
  height: 0.8rem;
@@ -70,8 +69,17 @@ margin-left: 3.1%;
   width: inherit;
   height: 100%;
   position: absolute;
-  top: 50%;
+  
   transform: translate(0, -50%);
+}
+.defaultline{
+  top: 50%;
+}
+.fixline{
+  top:45%;
+}
+.fixline2{
+  top:43%;
 }
 #buttonscontainer{
   width:100%;
