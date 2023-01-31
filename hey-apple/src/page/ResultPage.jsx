@@ -29,15 +29,26 @@ function ResultPage(){
     return (length<=1)?1000:null
   }
   useEffect(()=>{
-      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data)})
+      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data); localStorage.setItem(`${id}`)})
       
       if(length<=1){
         setloading(true)
       } else{
         setloading(false)
       }
-      
-  },[]);
+      if(length>1){
+        const fruitnames = Object.keys(data.fruit_list)
+        // const fruitcount = Object.values(data.fruit_list.count)
+        const fruitimages = Object.values(data.result_url_list)
+        const total = data.total_price;
+        console.log(fruitnames)
+        // console.log(fruitcount)
+        setfruitnames(fruitnames);
+        setfruitimages(fruitimages);
+        setfruitvalues(Object.values(data.fruit_list));
+        settotal(total);
+        }
+  },[length]);
     
 
       useInterval(()=>{
@@ -59,20 +70,7 @@ function ResultPage(){
        
 }},delaytime())
    
-useEffect(()=>{
-if(length>1){
-const fruitnames = Object.keys(data.fruit_list)
-// const fruitcount = Object.values(data.fruit_list.count)
-const fruitimages = Object.values(data.result_url_list)
-const total = data.total_price;
-console.log(fruitnames)
-// console.log(fruitcount)
-setfruitnames(fruitnames);
-setfruitimages(fruitimages);
-setfruitvalues(Object.values(data.fruit_list));
-settotal(total);
-}    
-},[length]);
+
 
   
     
