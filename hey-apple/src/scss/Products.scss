@@ -27,13 +27,15 @@
 }
 #productwrap{
   position: relative;
-  background: white;
+  background:#FFFDF2;
   width:100%;
 }
 #productwrap2{
   position: relative;
   width:100%;
   height:100%;
+  display: flex;
+  justify-content: space-between;
   background-color:#FFFDF2;
 }
 #productshead{
@@ -52,7 +54,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: 'Inter';
+  font-family: 'Quicksand';
   font-style: normal;
   line-height: 85px;
   letter-spacing: 0.2em;
@@ -131,9 +133,11 @@ img{
 #detailcontentcontainer{
   top:25%;
   width:100%;
-  height:55%;
+  height:60%;
   background-color: #fffef1;
   position: absolute;
+  font-family: 'Quicksand';
+  overflow: auto;
 }
 #contentname{
   font-size: var(--font-size-lg);
@@ -143,7 +147,7 @@ img{
   top: 50%;
   left: 50%;
   text-align: center;
-  font-family: "Inter";
+  font-family: "Quicksand";
   font-style: normal;
   width:100%;
   font-weight:300;
@@ -160,7 +164,9 @@ img{
   font-size:3rem;
   text-align : center;
   width:100%;
+  font-style: 'Quicksand';
   margin-top:8rem;
+  overflow: auto;
   white-space: pre-line
 }
 
@@ -307,4 +313,31 @@ button{
   height: 100%;
   width: 100%;
 }
+#naviprevious{
+  position:absolute;
+  left:2%;
+  bottom:0;
+  width:10%;
+  height:10%;
+  background-color: transparent;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Quicksand';
+}
+#naviforward{
+  position:absolute;
+  right:2%;
+  bottom:0;
+  width:10%;
+  height:10%;
+  background-color: transparent;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Quicksand';
+}
 
+#navilayout{
+  width: 100%;
+  bottom: 0;
+  background-color: transparent;
+}
