@@ -55,38 +55,50 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  font-family: 'Quicksand';
+  font-family: 'Inter';
   font-style: normal;
-  line-height: 85px;
+  line-height: 20vw;
   letter-spacing: 0.2em;
   font-weight: 300;
 }
 #productscontents{
-  height:fit-content;
+  width:100%;
+  height:100%;
   position:absolute;
   top:11rem;
   background: #FFFDF2;
   transition:0.3s;
 }
 #productcard{
-  width:17rem;
-  height:17rem;
+  @media(min-width: 60rem){
+  width:18%;
+  }
+  width:10rem;
+  height:auto;
   display: inline-block;
-  margin-left:3.0rem;
-  margin-right:3.0rem;
+  margin-left:3.5%;
+  margin-right:3.5%;
   margin-top:3.0rem;
   margin-bottom:3.0rem;
   border-radius: 3.0rem;
   position: relative;
   transition: all 0.2s linear;
-  cursor:poQuicksand;
+  cursor:pointer;
+}
+#productcardratio{
+  padding-top: 100%;
 }
 #productcard:hover{
   transform: scale(1.1);
 }
 #productname{
   width:80%;
-  font-size:2rem;
+  @media(min-width:60rem){
+  font-size:2vw;
+  }
+  @media(max-width:59.9999rem){
+  font-size:1rem;
+  }
   position:absolute;
   top:10%;
   left: 50%;
@@ -98,6 +110,7 @@
   top:25%;
   left:50%;
   transform:translate(-50%,0);
+
   width:70%;
   height:70%;
 
@@ -106,31 +119,30 @@
 
 #detailimagecontainer{
   width:100%;
-  height:25%;
+  height:45%;
   background-color: #FFCBCB;
   position: absolute;
   top:0;
 }
 .detailimage{
-  width:9%;
-  height: 50%;
+  width: 20%;
   position: absolute;
   top:50%;
-  left:61.5%;
+  left:50%;
   transform: translate(-50%,-50%);
 }
 .imagecontainer{
   padding-top: 90%;
 }
 #detailarrowleft{
-  top:10%;
-  left:3%;
-  width:1.5%;
-  height:15%;
+  top:3%;
+  left:1.5%;
+  width:2.5%;
+  height: 3vw;
   position: absolute;
 }
 #detailcontentcontainer{
-  top:25%;
+  top:45%;
   width:100%;
   height:60%;
   background-color: #fffef1;
@@ -139,7 +151,7 @@
   overflow: auto;
 }
 #contentname{
-  font-size: var(--font-size-lg);
+  font-size:3.0rem;
   text-align : center;
   position: absolute;
   transform: translate(-50%, -50%);
@@ -149,7 +161,7 @@
   font-family: "Quicksand";
   font-style: normal;
   width:100%;
-  font-weight:300;
+  margin-top:0.5rem;
 }
 #btninner{
   width:10rem;
@@ -167,6 +179,7 @@
   margin-top:8rem;
   overflow: auto;
   white-space: pre-line
+
 }
 
 button{
@@ -174,7 +187,7 @@ button{
   height:0.7rem;
   border-radius:10rem;
   background-color:#ffcbcb;
-  cursor:poQuicksand;
+  cursor:pointer;
   border:none;
 }
 

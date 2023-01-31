@@ -6,6 +6,7 @@ import React, {useState,
   import { useNavigate } from 'react-router-dom';
 
 import '../scss/Products.scss' 
+
 function ProductCard({layout,id,name,color,setheadbg}){
 
   const navigate = useNavigate();
@@ -23,7 +24,8 @@ function ProductCard({layout,id,name,color,setheadbg}){
       })
     }
   return(<div id = "productcard" style={{backgroundColor: `${color}`}} onMouseEnter={() => setheadbg(`${color}`)} 
-  onMouseLeave={() => setheadbg(`${color}`)} onClick = {()=>{move()}}>  
+  onMouseLeave={() => setheadbg(`${color}`)} onClick = {()=>{move()}}>
+    <div id = "productcardratio"></div>  
     <div id="productname" >{name}</div>
     <img src={imgurl} className = "productimg"/>
   </div>)
