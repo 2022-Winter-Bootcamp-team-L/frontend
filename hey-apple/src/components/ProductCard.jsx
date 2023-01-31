@@ -6,16 +6,19 @@ import React, {useState,
   import { useNavigate } from 'react-router-dom';
 
 import '../scss/Products.scss' 
+function ProductCard({layout,id,name,color,setheadbg}){
 
-function ProductCard({id,name,color,setheadbg}){
   const navigate = useNavigate();
   const imgurl = `/image/${name}.png`;
+  console.log(id)
+  console.log(layout)
   function move(){
     navigate(`/productdetail/${name}`,{
       state: {
         id: `${id}`,
         color: `${color}`,
-        image: `${imgurl}`
+        image: `${imgurl}`,
+        layout: `${layout}`
         }
       })
     }
