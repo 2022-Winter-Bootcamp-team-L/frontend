@@ -16,10 +16,12 @@ export default function ResultsBox({id, keys, values, total }) {
       >
         <Divider />
       </div>
+      <div id = "receipt_headercon">
       <div id="receipt_header_layout">
         <div id="receipt_header">Item Details</div>
         <div id="receipt_header">#</div>
         <div id="receipt_header">Price</div>
+      </div>
       </div>
       <Divider />
       <div>
