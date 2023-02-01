@@ -153,8 +153,8 @@ function ProductDetail() {
         let details = response.data["details"];
         let nutrition = response.data["nutrition"];
         contents2.push("price: " + [price] + "\n");
-        contents2.push("season: " + [season] + "\n");
-        contents2.push("colories: " + [price]);
+        contents2.push("seasonality: " + [season] + "\n");
+        contents2.push("colories: " + [calories]+" kcal(100g)");
         tempcontents.push([contents2], [details], [nutrition]);
         setcontents(tempcontents);
         setdetailcontent(tempcontents[0]);
