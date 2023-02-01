@@ -39,10 +39,14 @@ jobs:
           echo "${{secrets.ENV_FILE}}" >> .env
           cat .env
 
-    - name: Build, tag, and push image to Amazon ECR
+    - name: Build image to Amazon ECR
       working-directory: ./hey-apple
       run: |
         docker build . -t ${{ secrets.AWS_ECR_REPOSITORY }}/frontend:latest
-        docekr images
+        
+
+    - name: Push image to Amazon ECR
+      working-directory: ./hey-apple
+      run: |
         docker push ${{ secrets.AWS_ECR_REPOSITORY }}/frontend:latest
     
