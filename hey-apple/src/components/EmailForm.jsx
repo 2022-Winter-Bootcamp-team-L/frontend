@@ -6,7 +6,7 @@ import axiosCustom from "../apis/axiosCustom";
 import SendId from "../page/ResultPage";
 
 
-export default function EmailForm({id}) {
+export default function EmailForm({id,setemailsuccess}) {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
   console.log(id)
@@ -26,7 +26,7 @@ export default function EmailForm({id}) {
 
       )
       .then((response) => {
-        console.log(response);
+        setemailsuccess(response.sendEmail)
       })
       .catch((error) => {
         console.log(error);

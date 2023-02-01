@@ -8,6 +8,7 @@ import React, {
 import '../scss/Products.scss'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import axiosCustom from '../apis/axiosCustom'
 
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([{ layout: 0, id: 1, name: "APPLE", color: "#FFCBCB" }, { layout: 1, id: 12, name: "AVOCADO", color: "#B7C89B" }, {
@@ -67,7 +68,7 @@ function ProductDetail() {
 
   const navinum = ['APPLE', 'AVOCADO', 'BANANA', 'GRAPE', 'KIWI', 'LEMON', 'MANDARINE', 'MANGO', 'ORANGE', 'PEAR', 'PERSIMMON', 'PINEAPPLE']
   const getcontents = async () => {
-    await axios.get(`http://localhost:8000/api/v1/fruits/${id}`)
+    await axiosCustom.get(`/api/v1/fruits/${id}`)
       .then(function (response) {
         // 성공 핸들링
         let contents2 = [];

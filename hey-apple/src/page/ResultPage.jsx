@@ -23,22 +23,36 @@ function ResultPage(){
   const [fruitvalues,setfruitvalues] = useState();
   const [totalprice,settotal] = useState(0);
   const [fruitid,setfruitid] = useState('');
+  const [emailsuccess,setemailsuccess] = useState(false);
+  console.log(emailsuccess)
  useEffect(()=>{setfruitid(id)},[])
 
   function delaytime(){
     return (length<=1)?1000:null
   }
   useEffect(()=>{
-      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data)})
+      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data); localStorage.setItem(`${id}`)})
       
       if(length<=1){
         setloading(true)
       } else{
         setloading(false)
       }
-      
-  },[]);
-    
+      if(length>1){
+        const fruitnames = Object.keys(data.fruit_list)
+        // const fruitcount = Object.values(data.fruit_list.count)
+        const fruitimages = Object.values(data.result_url_list)
+        const total = data.total_price;
+        console.log(fruitnames)
+        // console.log(fruitcount)
+        setfruitnames(fruitnames);
+        setfruitimages(fruitimages);
+        setfruitvalues(Object.values(data.fruit_list));
+        settotal(total);
+        }
+  },[length]);
+
+    useEffect(()=>{console.log('2'); return()=>{console.log('1')}},[length]);
 
       useInterval(()=>{
       
@@ -59,26 +73,14 @@ function ResultPage(){
        
 }},delaytime())
    
-useEffect(()=>{
-if(length>1){
-const fruitnames = Object.keys(data.fruit_list)
-// const fruitcount = Object.values(data.fruit_list.count)
-const fruitimages = Object.values(data.result_url_list)
-const total = data.total_price;
-console.log(fruitnames)
-// console.log(fruitcount)
-setfruitnames(fruitnames);
-setfruitimages(fruitimages);
-setfruitvalues(Object.values(data.fruit_list));
-settotal(total);
-}    
-},[length]);
+
 
   
     
   return(
     <div id = "wrap">
-      <Header/>
+    {(emailsuccess==false)?(<div id = "wrap">
+     <Header/>
       {(loading===true)?<Loading/>:null}
       {(loading==false)?(
       <div id = "imagescontainer">
@@ -90,7 +92,8 @@ settotal(total);
           </div>)})}
         </div>
       </div>):null}
-      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice}/>):null}
+      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/>):null}
+    </div>):null}
     </div>
   );
 }
