@@ -42,11 +42,11 @@ jobs:
     - name: Build image to Amazon ECR
       working-directory: ./hey-apple
       run: |
-        docker build . -t ${{secrets.AWS_ECR_REPOSITORY}}/frontend:latest
+        docker build . -t ${{secrets.AWS_ECR_REPOSITORY}}
         
 
     - name: Push image to Amazon ECR
       working-directory: ./hey-apple
       run: |
-        docker push ${{secrets.AWS_ECR_REPOSITORY}}/frontend:latest
+        docker push ${{secrets.AWS_ECR_REPOSITORY}}
     
