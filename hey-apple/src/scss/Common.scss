@@ -32,7 +32,7 @@ html,body {
   height:2rem;
   position:absolute;
   top:30%;
-  font-size:1.3rem;
+
   font-family: 'Quicksand';
   font-style: normal;
 font-weight: 400;
@@ -41,25 +41,62 @@ letter-spacing: 0.2rem;
 cursor:pointer;
 }
 #header_home{
+@media(min-width:45rem){
   width:5rem;
   right:30rem;
+  font-size:1.3rem;
+}
+@media(max-width:45rem){
+  width:30%;
+  right:180%;
+  font-size: 3.0vw;
+}
+  
   @include headerscommon();
 }
 #header_aboutus{
-  width:8rem;
- 
+  
+  @media(min-width:45rem){
+    width:8rem;
+    font-size:1.3rem;
   right: 20rem;
+  }
+  @media(max-width:45rem){
+    width:45%;
+    right:120%;
+    font-size: 3.0vw;
+  }
+    
   @include headerscommon();
 }
 #header_products{
-  width:7rem;
-  
-  right:12rem;
+
+  @media(min-width:45rem){
+    width:7rem;
+    font-size: 1.3rem;
+    right:12rem;
+  }
+  @media(max-width:45rem){
+    width:45%;
+    right:65%;
+    font-size: 3.0vw;
+  }
+    
   @include headerscommon();
 }
 #header_statistics{
-  width:7rem;
-  
-  right:3.3rem;
+
+  @media(min-width:45rem){
+    width:7rem;
+    font-size: 1.3rem;
+    right:3rem;
+  }
+  @media(max-width:45rem){
+    width:47%;
+    right:11%;
+    font-size: 3.0vw;
+  }
+ 
+
   @include headerscommon();
 }

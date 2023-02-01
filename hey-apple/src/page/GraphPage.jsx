@@ -50,7 +50,7 @@ const changebuttons =  () =>{
   <Header/>
   
   <div id = "graphposition">
-  <div id = "graphname">{fruitsearch}</div>
+  <div id = "graphname">{fruitsearch.toUpperCase()}</div>
 <Graph data = {manufactured} name = {fruitsearch} color={graphcolor}/>
 </div>
 <div id = "graphbuttonscontainer">

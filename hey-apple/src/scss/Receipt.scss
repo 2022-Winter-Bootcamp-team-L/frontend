@@ -41,7 +41,7 @@
 #fruitscontainer {
   position: absolute;
   width: 85%;
-  height: 50%;
+  height: 45%;
   top: 25%;
   left: 50%;
   transform: translate(-50%, 0);
@@ -66,26 +66,80 @@
 }
 #receiptfruitnames {
   position: absolute;
-  left: 0;
+  left: 23%;
   width: 40%;
   text-align: center;
 }
 #receiptfruitcount {
   position: absolute;
-  right: 35%;
+  left: 5%;
+}
+#mulitiplesymbol{
+  position: absolute;
+  left:15%;
+  font-size: 1.3vw;
 }
 #receiptfruitprice {
   position: absolute;
   right: 1%;
-  width: 30%;
+  width: 33%;
   text-align: right;
 }
 #receipttotal {
   position: absolute;
-  bottom: 20%;
-  right: 8.5%;
+  bottom: 24%;
+  left: 8.5%;
   width: 50%;
+  text-align: left;
+  font-size: 1.5vw;
+  font-family: "Quicksand";
+}
+#receipttotalwon {
+  position: absolute;
+  bottom: 24%;
+  right: 8.5%;
+  width: 27.5%;
   text-align: right;
   font-size: 1.5vw;
   font-family: "Quicksand";
+}
+#receipt_headercon{
+  position:absolute;
+  top:15%;
+  width:100%;
+}
+
+#divider{
+  position:absolute;
+  left:50%;
+  transform: translate(-50%,0);
+}
+#stardivider{
+  font-size: 0.3vw;
+  text-align: center;
+  width:50%;
+  position:absolute;
+  top:10%;
+  left:50%;
+  transform: translate(-50%,0);
+}
+.divider1{
+  top:23%;
+}
+.divider2{
+
+  bottom:30%;
+}
+#pricewonsym{
+  width:20%;
+  text-align: left;
+  position:absolute;
+  left:0;
+  margin-top: -1%;
+}
+#fruitpricevalue{
+  text-align: right;
+  width:80%;
+  position:absolute;
+  right:0;
 }

@@ -3,11 +3,13 @@ import React, {
   useCallback,
   useEffect,
   ChangeEvent,
-  useRef,
-} from "react";
-import "../scss/Products.scss";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+
+  useRef
+} from 'react';
+import '../scss/Products.scss'
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import axios from 'axios';
+import axiosCustom from '../apis/axiosCustom'
 
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([
@@ -138,8 +140,9 @@ function ProductDetail() {
     "Pineapple",
   ];
   const getcontents = async () => {
-    await axios
-      .get(`http://localhost:8000/api/v1/fruits/${id}`)
+
+    await axiosCustom.get(`/api/v1/fruits/${id}`)
+
       .then(function (response) {
         // 성공 핸들링
         let contents2 = [];
