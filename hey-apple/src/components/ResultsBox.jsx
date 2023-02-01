@@ -4,7 +4,7 @@ import "../scss/Receipt.scss"
 import Divider from "./Divider";
 import EmailForm from "./EmailForm";
 
-export default function ResultsBox({id, keys, values, total }) {
+export default function ResultsBox({id, keys, values, total,setemailsuccess }) {
   let todays =[];
 
     let today = new Date();
@@ -40,7 +40,7 @@ export default function ResultsBox({id, keys, values, total }) {
               <div id = "mulitiplesymbol"> x</div>
               <div id="receiptfruitnames">{keys[i]}</div>
               <div id="receiptfruitprice">
-              ￦{values[i].price * values[i].count}
+              <div id = "pricewonsym">￦</div><div id = "fruitpricevalue">{values[i].price * values[i].count}</div>
               </div>
             </div>
           );
@@ -52,7 +52,7 @@ export default function ResultsBox({id, keys, values, total }) {
       </div>
      
       <div id = "receipttotalwon">
-      ￦{total}
+      <div id = "pricewonsym">￦</div>{total}
       </div>
       <div style={{
         display: 'flex',
@@ -60,7 +60,7 @@ export default function ResultsBox({id, keys, values, total }) {
         textAlign: 'center',
         marginTop: '18.8vw'
       }}>
-        <EmailForm id = {id}/>
+        <EmailForm id = {id} setemailsuccess = {setemailsuccess}/>
       </div>
     </box>
   );

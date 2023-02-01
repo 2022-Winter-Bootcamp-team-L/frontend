@@ -23,6 +23,8 @@ function ResultPage(){
   const [fruitvalues,setfruitvalues] = useState();
   const [totalprice,settotal] = useState(0);
   const [fruitid,setfruitid] = useState('');
+  const [emailsuccess,setemailsuccess] = useState(false);
+  console.log(emailsuccess)
  useEffect(()=>{setfruitid(id)},[])
 
   function delaytime(){
@@ -49,7 +51,8 @@ function ResultPage(){
         settotal(total);
         }
   },[length]);
-    
+
+    useEffect(()=>{console.log('2'); return()=>{console.log('1')}},[length]);
 
       useInterval(()=>{
       
@@ -76,7 +79,8 @@ function ResultPage(){
     
   return(
     <div id = "wrap">
-      <Header/>
+    {(emailsuccess==false)?(<div id = "wrap">
+     <Header/>
       {(loading===true)?<Loading/>:null}
       {(loading==false)?(
       <div id = "imagescontainer">
@@ -88,7 +92,8 @@ function ResultPage(){
           </div>)})}
         </div>
       </div>):null}
-      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice}/>):null}
+      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/>):null}
+    </div>):null}
     </div>
   );
 }
