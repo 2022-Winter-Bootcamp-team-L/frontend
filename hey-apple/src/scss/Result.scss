@@ -53,7 +53,7 @@
   width:18%;
   position:absolute;
   left:50%;
-  top:43%;
+  top:40%;
   transform: translate(-50%,-50%);
 }
 #emailratio{
@@ -78,11 +78,29 @@
 }
 #emailtext{
   position: absolute;
-  bottom:0%;
+  bottom:5%;
   margin-bottom:-4rem;
   width:400%;
   left:50%;
   transform: translate(-50%,0);
   text-align: center;
   font-size: 1.5rem;
+  font-family: 'Quicksand';
+}
+#emailhomelink{
+  position: absolute;
+  bottom:5%;
+  margin-bottom:-7rem;
+  width:400%;
+  left:50%;
+  transform: translate(-50%,0);
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: 'Quicksand';
+  animation: blink 0.7s ease-in-out infinite alternate;
+  cursor:pointer
+}
+@keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
