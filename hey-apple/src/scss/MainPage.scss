@@ -32,7 +32,7 @@ h2{
   animation: smoothAppearX 0.5s ease-in-out 0s 1 normal forwards;
 }
 @mixin smoothAppearY {
-  animation: smoothAppearY 0.5s ease-in-out;
+  animation: smoothAppearY 0.6s ease-in-out;
 }
 .smoothAppearX{
   @include smoothAppearX();

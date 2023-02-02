@@ -8,7 +8,7 @@ import '../scss/Products.scss'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import axiosCustom from '../apis/axiosCustom'
-
+import {motion} from 'framer-motion'
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([
     { layout: 0, id: 1, name: "Apple", color: "#FFCBCB" },
@@ -174,7 +174,7 @@ function ProductDetail() {
   }
   //contents=contents.filter((element, index) => contents.indexOf(element) === index);
   return (
-    <div id="productwrap2">
+    <motion.div initial = {{opacity:0}} animate={{opacity:1}} id="productwrap2">
       <div id="detailimagecontainer" style={{ backgroundColor: `${color}` }}>
         <div
           id="detailarrowleft"
@@ -193,7 +193,7 @@ function ProductDetail() {
           <img style={{ width: "8vw" }} src={image} />
         </div>
       </div>
-      <div id="detailcontentcontainer">
+      <div  id="detailcontentcontainer">
         
         <div id="detailcontent" style={{ textAlign: `${textalign}` }}>
           {detailcontent}
@@ -285,7 +285,7 @@ function ProductDetail() {
             </div>
           </div>
         </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></div>):null}
-    </div>
+    </motion.div>
   );
 }
 export default ProductDetail;

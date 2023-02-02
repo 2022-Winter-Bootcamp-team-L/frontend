@@ -76,40 +76,9 @@ const changebuttons =  () =>{
 </div>
   )};
 function ButtonsContainer({display,setsearch,btn1,btn2}){
-  const list = {
-    hidden:{scale:0.3},
-    show:{scale:1.0},
-    transition: {
-      type: "spring",
-      damping: 10,
-      stiffness: 100,
-      staggerChildren: 0.2
-    }
-    }
   
-  const item1 = {
-    hidden:{opacity:0},
-    show:{opacity:1},
-    transition: {
-      type: "spring",
-    damping: 10,
-    stiffness: 100,
-    duration:0.3,
-    }
-  }
-  const item2 = {
-    hidden:{opacity:0},
-    show:{opacity:1},
-    transition: {
-      delay:0.2,
-      type: "spring",
-    damping: 10,
-    stiffness: 100,
-    duration:0.3,
-    }
-  }
   return(
-    <div  id = "buttonscontainer" >
+    <div id = "buttonscontainer" >
    {(display==1)? (btn1.map(function(a,i){
       let image = `/image/${btn1[i].toUpperCase()}.png`
     return(<div  onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
@@ -121,7 +90,7 @@ function ButtonsContainer({display,setsearch,btn1,btn2}){
       let buttonposition = 'defaultline';
       if(i==4){buttonposition='fixline'}
       if(i==5){buttonposition='fixline2'}
-    return(<div  onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
+    return(<div   onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
     <div id = "eachbuttonsratio"></div>
    <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={image}/></div>
 </div>);}))}
