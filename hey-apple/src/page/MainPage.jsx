@@ -84,7 +84,7 @@ function MainPage() {
      
     </div>
     {(f.length>0&&(loading===false))? <ImagePreview file={f} setfile = {setf} setpreimg = {setpreimg} preimg = {preimg}/>: null}
-    {(loading)? <Loading />: null} 
+    {(loading)? (<div id="mainwrap"><Loading /></div>): null} 
     </div>
     {(f.length>0&&dropbox&&loading===false)?<div onClick={(e)=>{transmitimg(e)}} id = "nextupload" className='fade-in-box' >next {'>'}</div>:null}
     </div>

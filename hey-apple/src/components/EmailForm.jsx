@@ -9,6 +9,7 @@ import SendId from "../page/ResultPage";
 export default function EmailForm({id,setemailsuccess}) {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
+  const [waitforemail,setwait] = useState(false);
   console.log(id)
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,14 +20,21 @@ export default function EmailForm({id,setemailsuccess}) {
   };
 
   function handleSubmit(e) {
+    
     e.preventDefault();
+    setwait(true);
     axiosCustom
       .get(
         `/api/v1/bills?email=${email}&orderpayment_id=${id}`
 
       )
       .then((response) => {
-        setemailsuccess(response.sendEmail)
+       setemailsuccess(response.data.result)
+       if(response.data.result!=='sucess'){
+        alert('이메일 전송이 실패하였습니다. 다시시도해주세요.');
+        setwait(false)
+       }
+     
       })
       .catch((error) => {
         console.log(error);
@@ -47,8 +55,8 @@ export default function EmailForm({id,setemailsuccess}) {
         left: "-54vw"}}
         
       >
-        <form onSubmit={handleSubmit}>
-          <div id="dialog_header">
+      {(waitforemail==false)?(<div><form onSubmit={handleSubmit}>
+        <div id="dialog_header">
             Receipt
           </div>
           <DialogDivider/>
@@ -67,7 +75,7 @@ export default function EmailForm({id,setemailsuccess}) {
           />
         </form>
         <div>
-          <div id="dialog_btn_layout" onClick={handleClose}>
+          <div id="dialog_btn_layout">
             <button id="dialog_btn" type="submit" onClick={handleSubmit}>
               SUBMIT
             </button>
@@ -75,7 +83,10 @@ export default function EmailForm({id,setemailsuccess}) {
               CANCEL
             </button>
           </div>
-        </div>
+        </div></div>):(<div><div id="dialog_header">
+            Receipt
+          </div>
+          <DialogDivider/><div id="waitemail">Sending Email...</div></div>)}
       </dialog>
     </div>
   );

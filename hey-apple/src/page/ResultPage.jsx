@@ -11,7 +11,7 @@ import useInterval from '../components/useInterVal';
 import Loading from '../components/Loading';
 import ResultsBox from '../components/ResultsBox'
 import axiosCustom from '../apis/axiosCustom';
-
+import EmailCheck from '../components/EmailCheck'
 function ResultPage(){
   const {id} = useParams();
   const [data,setdata] = useState('');
@@ -23,7 +23,7 @@ function ResultPage(){
   const [fruitvalues,setfruitvalues] = useState();
   const [totalprice,settotal] = useState(0);
   const [fruitid,setfruitid] = useState('');
-  const [emailsuccess,setemailsuccess] = useState(false);
+  const [emailsuccess,setemailsuccess] = useState('');
   console.log(emailsuccess)
  useEffect(()=>{setfruitid(id)},[])
 
@@ -31,7 +31,7 @@ function ResultPage(){
     return (length<=1)?1000:null
   }
   useEffect(()=>{
-      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data); localStorage.setItem(`${id}`)})
+      axiosCustom.get(`/api/v1/orders/tasks/${id}`).then(response => {setdata(response.data); })
       
       if(length<=1){
         setloading(true)
@@ -79,7 +79,7 @@ function ResultPage(){
     
   return(
     <div id = "wrap">
-    {(emailsuccess==false)?(<div id = "wrap">
+    {(emailsuccess!=='sucess')?(<div id = "wrap">
      <Header/>
       {(loading===true)?<Loading/>:null}
       {(loading==false)?(
@@ -93,7 +93,7 @@ function ResultPage(){
         </div>
       </div>):null}
       {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/>):null}
-    </div>):null}
+    </div>):<EmailCheck/>}
     </div>
   );
 }

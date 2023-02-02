@@ -10,7 +10,8 @@ import '../scss/Products.scss'
 function ProductCard({layout,id,name,color,setheadbg}){
 
   const navigate = useNavigate();
-  const imgurl = `/image/${name}.png`;
+
+  const imgurl = `/image/${name.toUpperCase()}.png`;
   console.log(id)
   console.log(layout)
   function move(){

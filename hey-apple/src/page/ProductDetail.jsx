@@ -10,7 +10,6 @@ import '../scss/Products.scss'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import axiosCustom from '../apis/axiosCustom'
-
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([
     { layout: 0, id: 1, name: "Apple", color: "#FFCBCB" },
@@ -89,6 +88,7 @@ function ProductDetail() {
   let naviindex = Number(layout);
   let previousinfo = [];
   let forwardinfo = [];
+  const [modal,setmodal] = useState(true);
   console.log(id);
   if (naviindex != 0) {
     previousinfo = [
@@ -195,7 +195,18 @@ function ProductDetail() {
         </div>
       </div>
       <div id="detailcontentcontainer">
-        <div id="btninner">
+        
+        <div id="detailcontent" style={{ textAlign: `${textalign}` }}>
+          {detailcontent}
+        </div>
+        
+        <div id = "modaltophov">{(modal===false)?(<div id = "modaltop" onClick = {()=>{setmodal(true)}}>︿</div>):null}</div>
+        
+        
+      </div>
+      {(modal==true)?(<div id = "modal" className = "smoothAppearY">
+       
+        <div id="btninner" className = "smoothAppearY">
           <button
             class="custom-btn btn-1"
             style={{ backgroundColor: `${color}` }}
@@ -221,9 +232,7 @@ function ProductDetail() {
             }}
           ></button>
         </div>
-        <div id="detailcontent" style={{ textAlign: `${textalign}` }}>
-          {detailcontent}
-        </div>
+        
         <div style={{ bottom: 0 }}>
           <div
             id="naviprevious"
@@ -239,6 +248,7 @@ function ProductDetail() {
               });
             }}
           >
+            
             <div id="navi_text">{"<  "} {previousinfo[0]}</div>
             <div>
               <img
@@ -273,10 +283,8 @@ function ProductDetail() {
               {forwardinfo[0]} {"  >"}
             </div>
           </div>
-        </div>
-      </div>
+        </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></div>):null}
     </div>
   );
 }
-
 export default ProductDetail;
