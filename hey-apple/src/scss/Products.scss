@@ -60,6 +60,14 @@
   letter-spacing: 0.2em;
   font-weight: 300;
 }
+#productscontents{
+  width:100%;
+  height:auto;
+  position:absolute;
+  top:11rem;
+  background: #FFFDF2;
+  transition:0.3s;
+}
 #productshead {
   height: 11rem;
   width: 100%;
@@ -69,7 +77,22 @@
   transition: 0.5s;
 
 }
-
+#productcard{
+  @media(min-width: 60rem){
+  width:18%;
+  }
+  width:10rem;
+  height:auto;
+  display: inline-block;
+  margin-left:3.5%;
+  margin-right:3.5%;
+  margin-top:3.0rem;
+  margin-bottom:3.0rem;
+  border-radius: 3.0rem;
+  position: relative;
+  transition: all 0.2s linear;
+  cursor:pointer;
+}
 #productcardratio {
   padding-top: 100%;
 }
@@ -88,7 +111,7 @@
 
 #detailimagecontainer{
   width: 100%;
-  height: 7rem;
+  height: 8rem;
   background-color: #FFCBCB;
   position: absolute;
   display: block;
@@ -123,7 +146,7 @@
   // top: 25%;
   display: flexbox;
 
-  top: 7rem;
+  top: 8rem;
   width:100%;
   height:auto;
 
@@ -320,15 +343,19 @@ button {
 }
 
 #productname {
-  width: 80%;
-  font-size: 2rem;
-  font-weight: 500;
-  position: absolute;
-  top: 10%;
+  width:80%;
+  @media(min-width:60rem){
+  font-size:2vw;
+  }
+  @media(max-width:59.9999rem){
+  font-size:1rem;
+  }
+  position:absolute;
+  top:10%;
   left: 50%;
-  transform: translate(-50%, 0);
+  transform:translate(-50%,0);
   text-align: center;
-  font-family: "Quicksand";
+  font-family: 'Quicksand';
 }
 
 
