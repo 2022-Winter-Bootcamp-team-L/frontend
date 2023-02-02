@@ -10,14 +10,11 @@ env:
 
 
 jobs:
-  my-action:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-20.04
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
+  build_push:
+    name: Build_Push
     environment: production
-
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-20.04  
     steps:
     - name: Checkout
       uses: actions/checkout@v2
