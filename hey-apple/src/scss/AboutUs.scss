@@ -1,180 +1,97 @@
 #Aboutuswrap{
-    height:375rem;
-    width:120rem;
+    height:300rem;
+    width:100%;
     background-color:  #fffef1;
     position: relative;
 }
 #introwrap{
-    width:88rem; 
-    height:60rem; 
-    left:-2rem;
-    top:12rem;
+    width:70%; 
+    height:18%; 
+    top:3%;
     background-color: #FFF1D7;
     position: absolute;
 
 }
 #introwrap2{
-    margin-top:35rem;
-    left:61rem;
-    width:42rem; 
-    height:22rem; 
+    margin-top:17%;
+    left:50%;
+    width:40%; 
+    height:9%; 
     background-color: #FBCCAA;
     position: absolute;
     }
 .introtitle{
-    font-family: 'Inter';
+    font-family: "Quicksand";
     font-style: normal;
-    font-size: 3.3rem;
-    position: relative;
-    left:23rem;
-    top:10rem;
-    line-height: 4rem;
-    letter-spacing: 0.2em;
-    transform: translate(-50%,-50%);
+    font-size:450%;
+    position: absolute;
+    left:10%;
+    top:30%;
 }
 .introtitle2{
-    font-family: 'Inter';
+    font-family: "Quicksand";
     font-style: normal;
-    font-size: 2.2rem;
-    position: relative;
-    left:45rem;
-    top:12rem;
-    line-height: 3rem;
-    letter-spacing: 0.2em;
-    transform: translate(-50%,-50%);
-}
-#middlewrap{
-    margin-top:110rem;
-    left:4.3rem;
-    width:47rem; 
-    height:45rem; 
-    background-color: #FFDCDA;
+    font-size: 300%;
     position: absolute;
-    }
-#middlewrap2{
-    margin-top:169rem;
-    left:45rem;
-    width:34.5rem; 
-    height:42rem; 
-    background-color: #FFBDB4;
-    position: absolute;
-    }
-#middlewrap3{
-    margin-top:150rem;
-    left:85.5rem;
-    width:25rem; 
-    height:40rem; 
-    background-color: #FFDCD7;
-    position: absolute;
-    }
-
-.middletitle{
-    position: absolute;
-    left: 55rem;
-    top: 112.5rem;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 3rem;
-    line-height: 3.6rem;
-    letter-spacing: 0.2em;
-    font-weight: bold;
-}
-.middletitle2{
-    position: absolute;
-    left: 7.4rem;
-    top: 170rem;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 3rem;
-    line-height: 3.6rem;
-    letter-spacing: 0.2em;
-    font-weight: bold;
-    text-align: right;
-}
-.middledetail{
-    position: absolute;
-    left: 55rem;
-    top: 128rem;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: 0.2em;
-}
-.middledetail2{
-    position: absolute;
-    left: 7.4rem;
-    top: 188rem;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 2.5rem;
-    line-height: 3rem;
-    letter-spacing: 0.2em;
-    text-align: right;
-}
-.timename{
-    position: absolute;
-    left: 98rem;
-    top: 113rem;
-    width: 36rem;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 3rem;
-    font-weight: bold;
-    text-align: center;
-    letter-spacing: 0.2em;
-    transform: rotate(90deg);
+    left:55%;
+    top:70%;
 }
 .imgwrap{
     display:inline-flex;
     justify-content:space-between;
-    margin-top:69rem;
-    left:61rem;
-    width:59rem;
-    height:13rem; 
+    margin-top:48%;
+    left:50%;
+    width:50%;
+    height:13%; 
     position: absolute;
 }
 .image{
     display:inline-flex;
-    left:61rem;
-    width:17rem;
-    height:13rem; 
+    width:30%;
+    height:35%; 
     background-color: #FFE8AE;
 }
+.img1.img2.img3{
+    position: relative;
+    width:20%;
+    height:20%;
+}
 
-#demo{
-    margin-top:267.5rem;
-    left:42rem;
-    width:66rem; 
-    height:27.5rem; 
-    background-color: #E0F998;;
+#middlewrap{
+    margin-top:80%;
+    left:2%;
+    width:40%; 
+    height:15%; 
+    background-color: #FFDCDA;
     position: absolute;
     }
-#demo2{
-    margin-top:243rem;
-    left:-0.013rem;
-    width:101.5rem; 
-    height:49rem; 
-    background-color: #C5E8A2;
+.middletitle{
     position: absolute;
-    }
-.demotitle{
-    position: absolute;
-    left: 36rem;
-    top: 236rem;
-    font-family: 'Inter';
+    left: 45%;
+    top: 33%;
     font-style: normal;
-    font-size: 3rem;
-    letter-spacing: 0.2em; 
-    font-weight: bold; 
+    font-size:400%;
+    font-weight: bold;
+    font-family: "Quicksand";
+}
+.middledetail{
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    font-style: normal;
+    font-size:300%;
+    font-family: "Quicksand";
+}
+.timename{
+    position: absolute;
+    font-family: "Quicksand";
+    left: 83%;
+    top: 30%;
+    width: 36rem;
+    font-style: normal;
+    font-size: 300%;
+    font-weight: bold;
+    text-align: center;
+    transform: rotate(90deg);
 }
 
-.img1{
-    position: relative;
-}
-.img2{
-    position: relative;
-}
-.img3{
-    position: relative;
-}

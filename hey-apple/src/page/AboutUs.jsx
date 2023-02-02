@@ -29,25 +29,8 @@ function AboutUs() {
             <div class="timename">
                 cuty sexy fruity 
             </div>
-            <div id="middlewrap2">
-                <img src="/image/cam-removebg-preview.png"/>
-            </div>
-            <div class="middletitle2">
-                Ring Your Fruits<br/> Up Easily!
-            </div>
-            <div class="middledetail2">
-                by dropping a photo,<br/> you can ring your<br/> fruits up.<br/><br/> when you drop a<br/> photo, our AI will ring<br/> it up for you!
-            </div>
-            <div id="middlewrap3">
-                <img src="/image/books_original-removebg-preview.png"/>
-            </div>
-            <div class="demotitle">
-                demonstration
-            </div>
-            <div id="demo">
-            </div>
-            <div id="demo2">
-            </div>
+
+
 
         </div>
     );
@@ -55,3 +38,4 @@ function AboutUs() {
       }
 
       export default AboutUs;
+
