@@ -94,7 +94,7 @@ function ProductDetail() {
       productinfo[naviindex - 1].name,
       productinfo[naviindex - 1].id,
       productinfo[naviindex - 1].color,
-      `/image/${productinfo[naviindex - 1].name.toUpperCase}.png`,
+      `/image/${productinfo[naviindex - 1].name}.png`,
       naviindex - 1,
     ];
   } else {
@@ -102,7 +102,7 @@ function ProductDetail() {
       productinfo[11].name,
       productinfo[11].id,
       productinfo[11].color,
-      `/image/${productinfo[11].name.toUpperCase}.png`,
+      `/image/${productinfo[11].name}.png`,
       11,
     ];
   }
@@ -111,7 +111,7 @@ function ProductDetail() {
       productinfo[naviindex + 1].name,
       productinfo[naviindex + 1].id,
       productinfo[naviindex + 1].color,
-      `/image/${productinfo[naviindex + 1].name.toUpperCase}.png`,
+      `/image/${productinfo[naviindex + 1].name}.png`,
       naviindex + 1,
     ];
   } else {
@@ -119,7 +119,7 @@ function ProductDetail() {
       productinfo[0].name,
       productinfo[0].id,
       productinfo[0].color,
-      `/image/${productinfo[0].name.toUpperCase}.png`,
+      `/image/${productinfo[0].name}.png`,
       0,
     ];
   }
@@ -190,7 +190,7 @@ function ProductDetail() {
         </div>
         <div id="contentname">{name}</div>
         <div className="detailimage">
-          <img style={{ width: "8vw" }} src={process.env.PUBLIC_URL + +image} />
+          <img style={{ width: "8vw" }} src={process.env.PUBLIC_URL +image} />
         </div>
       </div>
       <div  id="detailcontentcontainer">
@@ -249,11 +249,11 @@ function ProductDetail() {
           >
 
             
-            <div id="navi_text">{"<  "} {process.env.PUBLIC_URL + +previousinfo[0]}</div>
+            <div id="navi_text">{"<  "} {previousinfo[0]}</div>
 
             <div>
               <img
-                src={process.env.PUBLIC_URL + +previousinfo[3]}
+                src={process.env.PUBLIC_URL + previousinfo[3]}
                 id="navi_image_previous"
                 alt="previous_post_image"
               />
@@ -275,7 +275,7 @@ function ProductDetail() {
           >
             <div>
               <img
-                src={process.env.PUBLIC_URL + +forwardinfo[3]}
+                src={process.env.PUBLIC_URL +forwardinfo[3]}
                 id="navi_image_foward"
                 alt="foward_post_image"
               />

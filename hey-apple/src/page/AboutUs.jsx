@@ -112,15 +112,15 @@ function AboutUs() {
                 </div>
             </motion.div>
             <motion.div variants = {list} initial="start" animate="show">
-           <motion.div className="image1" variants = {item}><img className="img1" src="/image/MANGO.png" width="70%" height="100%"></img></motion.div>
-                 <motion.div className="image2" variants = {item}><img className="img2" src="/image/ORANGE.png" width="80%" height="100%"></img></motion.div>
-                <motion.div className="image3" variants = {item}><img className="img3" src="/image/MANDARINE.png" width="70%" height="100%"></img></motion.div>
+           <motion.div className="image1" variants = {item}><img className="img1" src="/image/Mango.png" width="70%" height="100%"></img></motion.div>
+                 <motion.div className="image2" variants = {item}><img className="img2" src="/image/Orange.png" width="80%" height="100%"></img></motion.div>
+                <motion.div className="image3" variants = {item}><img className="img3" src="/image/Mandarine.png" width="70%" height="100%"></img></motion.div>
                 </motion.div>
             </motion.div>
          
             <div id="middlewrap">
                 <div id = "middlewrapratio"></div>
-                <img width="50%" height="30%" src="/image/PEACH.png"/>
+                <img width="50%" height="30%" src="/image/Peach.png"/>
                 <div initial = "beforeview" variants={middlewrapani} whileInView="view">
                 <motion.div className="middletitle" initial = "beforeview" variants={middlewrapani} whileInView="view">
                 Explore 🔍<br/>Various Fruits<br/> Easily!
