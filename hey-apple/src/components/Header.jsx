@@ -1,10 +1,11 @@
 import React from 'react';
 import '../scss/Common.scss';
 import { useNavigate } from 'react-router-dom';
-function Header() {
+function Header({isheader}) {
   const navigate = useNavigate();
+  console.log(isheader)
   return (
-<div id="header">
+<div id="header" className = {(isheader)?'hideheader':'showheader'}>
   <div id = "header_contents">
   <div id = "header_home" onClick={()=>{navigate('/')}} style={{ textDecoration: 'none', color: '#000000', fontFamily: 'Quicksand', fontWeight: '600' }}>
       Home

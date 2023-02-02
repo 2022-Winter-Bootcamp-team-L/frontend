@@ -83,7 +83,7 @@ function ButtonsContainer({display,setsearch,btn1,btn2}){
       let image = `/image/${btn1[i].toUpperCase()}.png`
     return(<div  onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
     <div id = "eachbuttonsratio"></div>
-   <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={image}/></div>
+   <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={process.env.PUBLIC_URL + image}/></div>
 </div>);
     })):(btn2.map(function(a,i){
       let image = `/image/${btn2[i].toUpperCase()}.png`
@@ -92,7 +92,7 @@ function ButtonsContainer({display,setsearch,btn1,btn2}){
       if(i==5){buttonposition='fixline2'}
     return(<div   onClick={()=>{setsearch(btn2[i])}}  id="eachbuttons" >
     <div id = "eachbuttonsratio"></div>
-   <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={image}/></div>
+   <div id = "eachbuttonsimage" className={buttonposition}><img width = "100%" height="100%" src={process.env.PUBLIC_URL + image}/></div>
 </div>);}))}
     </div>
   );
