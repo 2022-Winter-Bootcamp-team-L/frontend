@@ -1,7 +1,6 @@
 import { useState,Fragment } from 'react';
 import '../scss/AboutUs.scss';
 import Header from '../components/Header';
-import ReactPlayer from 'react-player'
 import { motion } from "framer-motion"
 import { useNavigate } from 'react-router-dom';
 function AboutUs() {
