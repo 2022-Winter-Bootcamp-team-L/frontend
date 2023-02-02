@@ -6,15 +6,15 @@
 @media (min-width: 27rem) {
   :root {
     --font-size-lg: 2.75rem;
-    --font-size-md: 1.2rem;
-    --font-size-sm: 1.25rem;
+    --font-size-md: 1.0rem;
+    --font-size-sm: 0.7rem;
   }
 }
 @media (min-width: 42rem) {
   :root {
     --font-size-lg: 2.75rem;
-    --font-size-md: 1.7rem;
-    --font-size-sm: 1.25rem;
+    --font-size-md: 1.6rem;
+    --font-size-sm: 1.0rem;
   }
 }
 
@@ -36,8 +36,29 @@
   width: 100%;
   height: 100%;
   display: flex;
-
-  background-color: #fffdf2;
+  background-color:#FFFDF2;
+}
+#productshead{
+  height:11rem;
+  width:100%;
+  background-color: #FFF1D7;
+  position:fixed;
+  z-index:2;
+  transition:0.5s
+}
+#productsheadletter{
+  width:60%;
+  font-size:var(--font-size-md);
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Quicksand';
+  font-style: normal;
+  line-height: 20vw;
+  letter-spacing: 0.2em;
+  font-weight: 300;
 }
 #productshead {
   height: 11rem;
@@ -65,17 +86,18 @@
   height: 70%;
 }
 
-#detailimagecontainer {
+#detailimagecontainer{
   width: 100%;
-  height: 25%;
-  background-color: #ffcbcb;
+  height: 7rem;
+  background-color: #FFCBCB;
   position: absolute;
   display: block;
   flex-direction: row;
   top: 0;
-}
 
-.detailimage {
+}
+.detailimage{
+
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -100,9 +122,11 @@
 #detailcontentcontainer {
   // top: 25%;
   display: flexbox;
-  bottom: 0;
-  width: 100%;
-  height: 75%;
+
+  top: 7rem;
+  width:100%;
+  height:auto;
+
   background-color: #fffef1;
   position: absolute;
   font-family: "Quicksand";
@@ -138,13 +162,16 @@
   flex-direction: row;
   margin-top: 0.5rem;
 }
-#btninner {
+
+#btninner{
   width: 10rem;
-  height: fit-content;
-  position: absolute;
-  left: 50%;
-  top: 3rem;
-  transform: translate(-50%, 0);
+  height: 2rem;
+  margin-left: auto;
+  margin-right:auto;
+  position:relative;
+  margin-top:2.4rem;
+
+
 }
 
 #detailcontent {
@@ -155,9 +182,10 @@
   font-style: "Quicksand";
   font-weight: 600;
   font-size: 2.5vw;
-  margin-top: 8rem;
+  margin-top:10rem;
   overflow: auto;
   white-space: pre-line;
+  margin-bottom: 9rem;
 }
 
 button {
@@ -251,8 +279,9 @@ button {
   //  border-right-color: #FFCBCB
 }
 
-#naviprevious {
-  position: absolute;
+#naviprevious{
+  position:fixed;
+
   display: flex;
   flex-direction: row;
   margin-top: 10vh;
@@ -262,10 +291,13 @@ button {
   background-color: transparent;
   font-family: "Quicksand";
   font-size: 1.5vw;
-  padding: 3vh;
+
+  bottom:0%;
 }
-#naviforward {
-  position: absolute;
+
+#naviforward{
+  position:fixed;
+
   display: flex;
   flex-direction: row;
   margin-top: 10vh;
@@ -275,54 +307,16 @@ button {
   background-color: transparent;
   font-family: "Quicksand";
   font-size: 1.5vw;
-  padding: 3vh;
+ 
+  bottom:0%;
 }
 
 #navilayout {
   width: 100%;
   bottom: 0;
   background-color: transparent;
-}
-:root {
-  --font-size-lg: 2rem;
-  --font-size-md: 1.5rem;
-  --font-size-sm: 1rem;
-}
 
-#productsheadletter {
-  width: 60%;
-  font-size: var(--font-size-md);
-  position: absolute;
-  top: 63%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  font-family: "Quicksand";
-  font-style: normal;
-  line-height: 85px;
-  letter-spacing: 0.2em;
-  font-weight: 500;
-  font-size: 2.5vw;
-}
-#productscontents {
-  height: fit-content;
-  position: absolute;
-  top: 11rem;
-  background: #fffdf2;
-  transition: 0.3s;
-}
-#productcard {
-  width: 17rem;
-  height: 17rem;
-  display: inline-block;
-  margin-left: 3rem;
-  margin-right: 3rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-  border-radius: 3rem;
-  position: relative;
-  transition: all 0.2s linear;
-  cursor: pointer;
+
 }
 
 #productname {
@@ -362,3 +356,53 @@ button {
   justify-content: center;
   width: fit-content;
 }
+
+#modaltop{
+  width:5rem;
+
+  position:fixed;
+  left:50%;
+  transform: translate(-50%,10%);
+  bottom:0;
+  text-align: center;
+  z-index:2;
+  opacity:0;
+  font-size:3rem;
+  font-weight: 400;
+  cursor:pointer;
+  font-family: 'Quicksand';
+}
+
+#modaltophov{
+  width:100%;
+  height:8%;
+  position:fixed;
+  bottom:0;
+}
+#modaltophov:hover #modaltop{
+  opacity:1;
+  transition: 0.5s;
+  transform: translate(-50%,0%);
+}
+#modalbottom{
+  width:5rem;
+  height:1.5rem;
+  margin-left: auto;
+  margin-right: auto;;
+  text-align: center;
+  z-index:2;
+  font-size:2.0rem;
+  font-weight: 400;
+  font-family: 'Quicksand';
+  margin-top: -4rem;
+  cursor:pointer;
+}
+#modal{
+  width:100%;
+  height:10%;
+  background-color: white;
+  position:fixed;
+  bottom:0;
+  
+}
+

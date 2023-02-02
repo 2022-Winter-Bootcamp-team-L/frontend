@@ -3,6 +3,7 @@ import '../scss/Products.scss';
 import React, { useRef, useCallback, useEffect, useState } from 'react';
 import ProductCard from '../components/ProductCard';
 import Header from '../components/Header'
+import { motion } from "framer-motion"
 function Products() {
   const [productinfo,setproductinfo] = useState([{layout:1, id:1,name:"Apple",color:"#FFCBCB"},{layout:2, id:12,name:"Avocado",color:"#B7C89B"},{layout:3,id:5,name:
     "Banana",color:"#FFF282"},{layout:4, id:3,name:
@@ -17,6 +18,17 @@ function Products() {
                       "Pineapple",color:"#F6CF6B"}]);
 
   const [headbg,setheadbg] = useState("#FFF1D7");
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.5
+      }
+    }
+  }
+  
+
 return (
   <div id = "productwrap">
     <Header />
@@ -25,13 +37,15 @@ return (
     🔍 Explore more Fruits!
     </div>
     </div>
-    <div id = "productscontents" >
+    <motion.div id = "productscontents"  variants={container}
+    initial="hidden"
+    animate="show">
       {productinfo.map(function(a,i){
         return(<ProductCard layout = {i} id={productinfo[i].id} name = {productinfo[i].name} color={productinfo[i].color} setheadbg = {setheadbg}/>);
 
       })
     }
-    </div>
+    </motion.div>
   </div>
 );
 }
