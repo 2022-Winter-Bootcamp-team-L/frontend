@@ -60,13 +60,7 @@ const changebuttons =  () =>{
       </div>
   <div id = "graphbuttons">
     <ButtonsContainer display = {buttonsdisplay} setsearch = {setsearch} btn1 = {graphbuttons1} btn2 = {graphbuttons2}/>
-      {/* {graphbuttons2.map(function(a,i){
-      let image = `/image/${graphbuttons2[i].toUpperCase()}.png`
-    return(<div id="eachbuttons">
-    <div id = "eachbuttonsratio"></div>
-  <div id = "eachbuttonsimage"><img width = "100%" height="100%" src={image}/></div>
-</div>);
-    })} */}
+      
     </div>
     <div id = "graphright" onClick={()=>{changebuttons()}}>
     <img src={process.env.PUBLIC_URL + "/image/graph_forward.png"}/>
@@ -80,13 +74,13 @@ function ButtonsContainer({display,setsearch,btn1,btn2}){
   return(
     <div id = "buttonscontainer" >
    {(display==1)? (btn1.map(function(a,i){
-      let image = `/image/${btn1[i].toUpperCase()}.png`
+      let image = `/image/${btn1[i]}.png`
     return(<div  onClick={()=>{setsearch(btn1[i])}} id="eachbuttons"  >
     <div id = "eachbuttonsratio"></div>
    <div id = "eachbuttonsimage" className='defaultline'><img width = "100%" height="100%" src={process.env.PUBLIC_URL + image}/></div>
 </div>);
     })):(btn2.map(function(a,i){
-      let image = `/image/${btn2[i].toUpperCase()}.png`
+      let image = `/image/${btn2[i]}.png`
       let buttonposition = 'defaultline';
       if(i==4){buttonposition='fixline'}
       if(i==5){buttonposition='fixline2'}

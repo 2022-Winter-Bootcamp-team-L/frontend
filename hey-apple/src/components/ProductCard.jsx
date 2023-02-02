@@ -11,7 +11,7 @@ function ProductCard({layout,id,name,color,setheadbg}){
 
   const navigate = useNavigate();
 
-  const imgurl = `/image/${name.toUpperCase()}.png`;
+  const imgurl = `/image/${name}.png`;
   console.log(id)
   console.log(layout)
   function move(){
