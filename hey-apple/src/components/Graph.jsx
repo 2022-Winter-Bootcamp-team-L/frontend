@@ -95,7 +95,7 @@ const Graph = ({ data /* see data tab */ ,name,color}) =>
                 <span>{name}'s price</span>
                 <br />
                 <strong>
-                    {indexValue}: ₩{value}
+                    {indexValue}&nbsp;:&nbsp;₩{value.toLocaleString('ko-kr')}
                 </strong>
             </div>)}
         axisTop={null}
