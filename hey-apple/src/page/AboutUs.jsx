@@ -107,7 +107,7 @@ function AboutUs() {
                 </div>
                 <motion.div variants = {spring} initial = "hidden" animate = "show" id="introwrap2">
                 <motion.div  className="introtitle">ring up your fruit!</motion.div>
-                <motion.div className="introtitle2" onClick = {()=>{navigate('/')}}>start now-{'>'}</motion.div>
+                <motion.div className="introtitle2" onClick = {()=>{navigate('/')}}>start now{'→'}</motion.div>
                 <div id = "introratio2">
                 </div>
             </motion.div>
@@ -120,7 +120,7 @@ function AboutUs() {
          
             <div id="middlewrap">
                 <div id = "middlewrapratio"></div>
-                <img width="50%" height="30%" src="/image/Peach.png"/>
+                <img width="80%" height="50%" src="/image/Peach.png"/>
                 <div initial = "beforeview" variants={middlewrapani} whileInView="view">
                 <motion.div className="middletitle" initial = "beforeview" variants={middlewrapani} whileInView="view">
                 Explore 🔍<br/>Various Fruits<br/> Easily!
@@ -154,16 +154,11 @@ function AboutUs() {
     muted={true}
     controls={true}
     loop={true} 
-    />*/}<video muted controls loop width='100%'
+    />*/}<p align="middle"><video muted controls loop width='95%'
     height='100%'>
             <source src='/videos/demovideo.mp4' type="video/mp4" />
-        </video></motion.div>
+        </video></p></motion.div>
             </div>
-          
-            
-
-
-
         </div>
     );
 
