@@ -30,14 +30,14 @@ function Products() {
   
 
 return (
-  <motion.div id = "productwrap">
+  <motion.div  initial={{opacity:0}} animate={{opacity:1,transition: { duration: 0.3 }}}  exit={{opacity:0, transition: { duration: 0.3 }}} id = "productwrap">
     <Header />
     <div id = "productshead" style={{backgroundColor: `${headbg}`}} >
       <div id = "productsheadletter">
     🔍 Explore more Fruits!
     </div>
     </div>
-    <motion.div id = "productscontents"  variants={container}
+    <motion.div id = "productscontents" 
     initial="hidden"
     animate="show">
       {productinfo.map(function(a,i){

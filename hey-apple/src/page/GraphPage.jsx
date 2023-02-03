@@ -47,7 +47,7 @@ const changebuttons =  () =>{
   const graphbuttons2 = ['Mandarine','Mango'
   ,'Orange','Pear','Persimmon','Pineapple',]
   
-  return (<div id = "graphwrap">
+  return (<motion.div id = "graphwrap" initial = {{opacity:0}} animate = {{opacity:1, transition: { duration: 0.3 }}} exit={{opacity:0, transition: { duration: 0.3 }}}>
   <Header/>
   
   <div id = "graphposition">
@@ -67,7 +67,7 @@ const changebuttons =  () =>{
     </div>
 </div>
 
-</div>
+</motion.div>
   )};
 function ButtonsContainer({display,setsearch,btn1,btn2}){
   

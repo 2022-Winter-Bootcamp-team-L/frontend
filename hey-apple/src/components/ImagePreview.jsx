@@ -4,19 +4,22 @@ import React, {useState,
   useEffect,
   ChangeEvent,
   useRef} from 'react';
+import {AnimatePresence, motion} from 'framer-motion'
 import '../scss/DragDrop.scss' 
 function ImagePreview({file,setfile,setpreimg,preimg}){  
     return(
   <div id = "previewcontainer" className='previewtranslate'>
     <div id = "previewimages">
+      <AnimatePresence>
     {(file!=='')? file.map(function(a,i){
- return(< Images imagefile = {file[i]} file={file} setfile={setfile} preimg = {preimg} setpreimg = {setpreimg}/>);
+ return(< Images key = {i} imagefile = {file[i]} file={file} setfile={setfile} preimg = {preimg} setpreimg = {setpreimg}/>);
  } ):null}
+ </AnimatePresence>
  </div>
 </div>)
  }
 
-function Images({imagefile,file,setfile,preimg,setpreimg}){
+function Images({key,imagefile,file,setfile,preimg,setpreimg}){
   const [image,setimage] = useState('');
   function resetpreimg(preimg,object){
    
@@ -54,7 +57,7 @@ function Images({imagefile,file,setfile,preimg,setpreimg}){
   }  
   useEffect(() =>{preview()},[file])
   console.log(preimg)
-  return(<div id = "eachimages">
+  return(<motion.div key = {imagefile} initial = {{scale:0,opacity:0}} animate = {{scale:1,opacity:1, transition: { duration: 0.3 }}} exit = {{scale:0,opacity:0}}id = "eachimages">
     <div id = "img" style={{ 
     backgroundImage: `url(${image})` 
   }} key={imagefile.id} onClick = {()=>{handlepreFile(imagefile.object)}} >
@@ -62,6 +65,6 @@ function Images({imagefile,file,setfile,preimg,setpreimg}){
 
   </div>
   <div id = "deleteimg" onClick = {()=>{handleFilterFile(imagefile.id,imagefile.object,preimg)}}><img src={process.env.PUBLIC_URL + "/image/xsymbol.png"} width="100%" height="100%" alt = "이미지안나옴"/></div>
-  </div>)
+  </motion.div>)
 }
 export default ImagePreview;

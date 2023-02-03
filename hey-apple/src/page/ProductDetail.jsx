@@ -182,30 +182,11 @@ function ProductDetail() {
   function goback() {
     navigate("/products");
   }
-  const prodetailani = {
-    entry:{
-      x: 800,
-      opacity: 0,
-    
-    },
-    //메인 애니메이션 (50%, 슬라이드가 가운데로 왔을 때의 상태)
-    center: {
-      opacity: 1,
-      x: 0,
-      
-      transition: {duration: 0.5 }
-    },
-    exit:{
-      x: -800,
-      opacity: 0,
-     
-      transition: { duration: 0.5 }
-    }
-  
-};
+ 
+
   //contents=contents.filter((element, index) => contents.indexOf(element) === index);
   return (
-    <motion.div initial = {"entry"} animate={"center"} exit={"exit"}  variants={prodetailani} id="productwrap2">
+    <div  key = "product"  id="productwrap2">
       <div id="detailimagecontainer" style={{ backgroundColor: `${color}` }}>
         <div
           id="detailarrowleft"
@@ -318,7 +299,7 @@ function ProductDetail() {
             </div>
           </div>
         </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></motion.div> )}</AnimatePresence>
-    </motion.div>
+    </div>
    
   );
 }

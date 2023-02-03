@@ -43,9 +43,9 @@ function MainPage() {
     }
     
     try{
+ 
     setdropbox(false);
     setLoading(true);
-
     await axiosCustom.post(
       '/api/v1/orders/tasks',
       
@@ -72,7 +72,7 @@ function MainPage() {
     
     //종료 애니메이션 (100%)
     exit:{
-      x: -800,
+      x: -1000,
       opacity: 0,
      
       transition: { duration: 0.5 }
@@ -80,26 +80,21 @@ function MainPage() {
   }
     const enterani = {
       entry:{
-        x: 800,
+        x: 1000,
         opacity: 0,
-      
+        
       },
       //메인 애니메이션 (50%, 슬라이드가 가운데로 왔을 때의 상태)
       center: {
         opacity: 1,
         x: 0,
-        
-        transition: {duration: 0.5 }
-      }, exit:{
-        x: -800,
-        opacity: 0,
        
-        transition: { duration: 0.5 }
-      }
+        transition: {duration: 1.0 }
+      }, 
     
   };
   return (
-  <div id="mainwrap">
+  <motion.div id="mainwrap" initial={{opacity:0}} animate = {{opacity:1, transition: { duration: 0.3 }}}  exit={{opacity:0, transition: { duration: 0.3 }}}>
       <Header/>
       <AnimatePresence>
         {(!loading)&&(<motion.div id = "mainwrap" key="beforeload" variants={exitani}  exit="exit"
@@ -125,7 +120,7 @@ function MainPage() {
     </motion.div>)}
     {(loading)&& (<motion.div id = "mainwrap" variants={enterani} key="afterload"  initial ="entry" animate="center"><Loading/></motion.div>)} 
     </AnimatePresence>
-    </div>
+    </motion.div>
 
   );
 }
