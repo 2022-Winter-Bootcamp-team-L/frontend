@@ -6,10 +6,16 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ResultPage from "./page/ResultPage";
 import GraphPage from './page/GraphPage';
 import AboutUs from "./page/AboutUs";
+import {AnimatePresence} from 'framer-motion'
+
 function App() {
+
   return (
-    <BrowserRouter>
+   
+    
+    <AnimatePresence>
       <Routes>
+      
         <Route path="/" element={<MainPage />} />
         <Route path="/products" element={<Products />} />
         <Route path="/productdetail/:name" element={<ProductDetail/>}/>
@@ -17,7 +23,8 @@ function App() {
         <Route path="/graph" element = {<GraphPage/>}/>
         <Route path="/aboutus" element ={<AboutUs />} />
       </Routes>
-    </BrowserRouter>
+      </AnimatePresence>
+
   );
 }
 

@@ -30,7 +30,7 @@ function Products() {
   
 
 return (
-  <div id = "productwrap">
+  <motion.div id = "productwrap">
     <Header />
     <div id = "productshead" style={{backgroundColor: `${headbg}`}} >
       <div id = "productsheadletter">
@@ -46,7 +46,7 @@ return (
       })
     }
     </motion.div>
-  </div>
+  </motion.div>
 );
 }
 export default Products;

@@ -90,7 +90,12 @@ function MainPage() {
         x: 0,
         
         transition: {duration: 0.5 }
-      },
+      }, exit:{
+        x: -800,
+        opacity: 0,
+       
+        transition: { duration: 0.5 }
+      }
     
   };
   return (
