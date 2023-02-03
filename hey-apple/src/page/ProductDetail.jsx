@@ -8,7 +8,7 @@ import '../scss/Products.scss'
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import axiosCustom from '../apis/axiosCustom'
-import {motion} from 'framer-motion'
+import {motion,AnimatePresence} from 'framer-motion'
 function ProductDetail() {
   const [productinfo, setproductinfo] = useState([
     { layout: 0, id: 1, name: "Apple", color: "#FFCBCB" },
@@ -166,7 +166,17 @@ function ProductDetail() {
   useEffect(() => {
     getcontents();
   }, [id]);
-
+  const modalani = {
+    view: {y:0, opacity:1,transition: {
+        delay:0.1,
+      duration:0.3,
+      }},
+    
+    beforeview:{y:10, opacity:0},
+    close:{y:10,opacity:0,transition: {
+      delay:0.1,
+    duration:0.3,
+    }},};
   console.log(contents);
   console.log(detailcontent);
   function goback() {
@@ -174,7 +184,7 @@ function ProductDetail() {
   }
   //contents=contents.filter((element, index) => contents.indexOf(element) === index);
   return (
-    <motion.div initial = {{opacity:0}} animate={{opacity:1}} id="productwrap2">
+    <motion.div initial = {{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} id="productwrap2">
       <div id="detailimagecontainer" style={{ backgroundColor: `${color}` }}>
         <div
           id="detailarrowleft"
@@ -203,7 +213,9 @@ function ProductDetail() {
         
         
       </div>
-      {(modal==true)?(<div id = "modal" className = "smoothAppearY">
+      <AnimatePresence>{modal&&(<motion.div key="modal" variants={modalani} initial="beforeview"
+      animate="view"
+      exit="close" id = "modal" >
        
         <div id="btninner" className = "smoothAppearY">
           <button
@@ -284,8 +296,9 @@ function ProductDetail() {
               {forwardinfo[0]} {"  >"}
             </div>
           </div>
-        </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></div>):null}
+        </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></motion.div> )}</AnimatePresence>
     </motion.div>
+   
   );
 }
 export default ProductDetail;

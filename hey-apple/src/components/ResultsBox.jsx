@@ -5,13 +5,8 @@ import Divider from "./Divider";
 import EmailForm from "./EmailForm";
 
 export default function ResultsBox({id, keys, values, total,setemailsuccess }) {
-  let todays =[];
 
-    let today = new Date();
-  todays = [today.getFullYear(),today.getMonth() + 1,today.getDate(),today.getHours(),today.getMinutes()];
-
-  console.log(id);
-  console.log(values);
+  
   return (
     <box id="receipt">
       <div id="receipt_title">Receipt</div>
@@ -36,11 +31,11 @@ export default function ResultsBox({id, keys, values, total,setemailsuccess }) {
         {values.map(function (a, i) {
           return (
             <div id="fruitinfocontainer">
-              <div id="receiptfruitcount">{values[i].count}</div>
+              <div id="receiptfruitcount">{values[i].count.toLocaleString('ko-KR')}</div>
               <div id = "mulitiplesymbol"> x</div>
               <div id="receiptfruitnames">{keys[i]}</div>
               <div id="receiptfruitprice">
-              <div id = "pricewonsym">￦</div><div id = "fruitpricevalue">{values[i].price * values[i].count}</div>
+              <div id = "pricewonsym">￦</div><div id = "fruitpricevalue">{(values[i].price * values[i].count).toLocaleString('ko-KR')}</div>
               </div>
             </div>
           );
@@ -52,7 +47,7 @@ export default function ResultsBox({id, keys, values, total,setemailsuccess }) {
       </div>
      
       <div id = "receipttotalwon">
-      <div id = "pricewonsym">￦</div>{total}
+      <div id = "pricewonsym">￦</div>{total.toLocaleString('ko-KR')}
       </div>
       <div style={{
         display: 'flex',

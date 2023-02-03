@@ -13,6 +13,7 @@ import axios from 'axios';
 import { hasSelectionSupport } from '@testing-library/user-event/dist/utils';
 import { useNavigate } from 'react-router-dom';
 import useInterval from '../components/useInterVal';
+import {motion,AnimatePresence} from 'framer-motion'
 function MainPage() {
   const [intro, setintro] = useState(true);
   const [dropbox,setdropbox] = useState(false);
@@ -66,9 +67,38 @@ function MainPage() {
   setdropbox(true)
   }
   }
+  const exitani = {
+    //등장 애니메이션 (애니메이션 진행률:0%)
+    
+    //종료 애니메이션 (100%)
+    exit:{
+      x: -800,
+      opacity: 0,
+     
+      transition: { duration: 0.5 }
+    }
+  }
+    const enterani = {
+      entry:{
+        x: 800,
+        opacity: 0,
+      
+      },
+      //메인 애니메이션 (50%, 슬라이드가 가운데로 왔을 때의 상태)
+      center: {
+        opacity: 1,
+        x: 0,
+        
+        transition: {duration: 0.5 }
+      },
+    
+  };
   return (
   <div id="mainwrap">
       <Header/>
+      <AnimatePresence>
+        {(!loading)&&(<motion.div id = "mainwrap" key="beforeload" variants={exitani}  exit="exit"
+  >
     <div id = "maincontainer">
      <div id = "mainintro" className = {classNames((f.length>0)?'goleft':'center')} onMouseDown={(e) => {
       e.preventDefault()}
@@ -84,9 +114,12 @@ function MainPage() {
      
     </div>
     {(f.length>0&&(loading===false))? <ImagePreview file={f} setfile = {setf} setpreimg = {setpreimg} preimg = {preimg}/>: null}
-    {(loading)? (<div id="mainwrap"><Loading /></div>): null} 
+    
     </div>
     {(f.length>0&&dropbox&&loading===false)?<div onClick={(e)=>{transmitimg(e)}} id = "nextupload" className='fade-in-box' >next {'>'}</div>:null}
+    </motion.div>)}
+    {(loading)&& (<motion.div id = "mainwrap" variants={enterani} key="afterload"  initial ="entry" animate="center"><Loading/></motion.div>)} 
+    </AnimatePresence>
     </div>
 
   );

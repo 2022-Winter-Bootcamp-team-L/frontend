@@ -1,2 +1,0 @@
-const data = {"took":2,"timed_out":false,"_shards":{"total":1,"successful":1,"skipped":0,"failed":0},"hits":{"total":{"value":1,"relation":"eq"},"max_score":2.1594841,"hits":[{"_index":"heyapple","_id":"OtCY94UBCPj2rl1_Y8eW","_score":2.1594841,"_source":{"name":"Banana","avg":100,"price1":200,"date1":"01-27","price2":300,"date2":"01-26","price3":500,"date3":"01-25","price4":400,"date4":"01-24","price5":400,"date5":"01-23","price6":400,"date6":"01-22"}}]}}
-export default data;

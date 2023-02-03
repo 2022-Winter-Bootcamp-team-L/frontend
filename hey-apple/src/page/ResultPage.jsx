@@ -12,6 +12,7 @@ import Loading from '../components/Loading';
 import ResultsBox from '../components/ResultsBox'
 import axiosCustom from '../apis/axiosCustom';
 import EmailCheck from '../components/EmailCheck'
+import {motion,AnimatePresence} from 'framer-motion'
 function ResultPage(){
   const {id} = useParams();
   const [data,setdata] = useState('');
@@ -73,7 +74,19 @@ function ResultPage(){
        
 }},delaytime())
    
+const enterani = {
+  hidden:{
+    opacity: 0,
+    transition: {duration: 0.5 }
+  },
+  //메인 애니메이션 (50%, 슬라이드가 가운데로 왔을 때의 상태)
+  show: {
+    opacity: 1,
+    
+    transition: {delay:0.5,duration: 0.5 }
+  },
 
+};
 
   
     
@@ -81,8 +94,10 @@ function ResultPage(){
     <div id = "wrap">
     {(emailsuccess!=='sucess')?(<div id = "wrap">
      <Header/>
-      {(loading===true)?<Loading/>:null}
+     <AnimatePresence>
+      {(loading===true)?<motion.div key = "resultloading" variants={enterani} id = "loadwrap" exit="hidden"><Loading/></motion.div>:null}
       {(loading==false)?(
+        <motion.div key = "resultshow" id = "wrap"  variants={enterani} initial={{opacity:0}} animate="show">
       <div id = "imagescontainer">
         <div id = "imagescontainerratio">
         </div>
@@ -91,8 +106,8 @@ function ResultPage(){
           return(<div id = "eachresultimages" style = {{backgroundImage: `url(${fruitimages[i]})`}}>
           </div>)})}
         </div>
-      </div>):null}
-      {(loading==false)?(<ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/>):null}
+      </div><ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/></motion.div>):null}
+      </AnimatePresence>
     </div>):<EmailCheck/>}
     </div>
   );
