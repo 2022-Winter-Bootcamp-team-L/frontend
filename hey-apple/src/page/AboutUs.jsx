@@ -42,23 +42,25 @@ function AboutUs() {
             
             beforeview:{x:-10, opacity:0}}
         const spring = {
-            hidden:{scale:0.3},
-            show:{scale:1.0},
+            hidden:{scale:0},
+            show:{scale:1.0,
             transition: {
               type: "spring",
               damping: 10,
               stiffness: 100,
-              delayChildren:0.5,
+              delay:0.5,
+              
               bounce: 0.25,
             }
-            }
+            }}
             const list = {
                 start:{scale:0.3,opacity:0},
                 show:{scale:1.0,opacity:1,transition: {
+                  delay:0.3,
                     duration:1.0,
                     delayChildren:0.3,
                     stiffness: 110,
-  staggerChildren: 0.5,
+  staggerChildren: 0.6,
                   }},
                     }
                 
@@ -69,24 +71,7 @@ function AboutUs() {
                 
                 }
              
-            // function headerMoving(direction){
-            //   if(direction==="up"){
-            //     setisheader(false);
-            //   } else if (direction ==="down"){
-            //     setisheader(true);
-            //   }
-            // }
-
-            // let prevScrollTop=0;
-            // document.addEventListener("scroll",function(){
-            //   let nextScrollTop = window.pageYOffset ||0;
-            //   if(nextScrollTop> prevScrollTop){
-            //     headerMoving("down");
-            //   } else if (nextScrollTop<prevScrollTop){
-            //     headerMoving("up");
-            //   }
-            //   prevScrollTop = nextScrollTop;
-            // })
+           
             const handleOnWheel = (e) => {
               if (e.nativeEvent.wheelDelta > 0) {
                   // scroll up event
@@ -99,7 +84,7 @@ function AboutUs() {
               }
           }
     return (
-        <div id="Aboutuswrap" onWheel={handleOnWheel}>
+        <motion.div id="Aboutuswrap" initial={{opacity:0}} animate = {{opacity:1, transition: { duration: 0.3}}} exit={{opacity:0, transition: { duration: 0.3 }}} onWheel={handleOnWheel}>
             <Header isheader = {isheader}/>
      
             <motion.div id="introwrap" >
@@ -107,7 +92,9 @@ function AboutUs() {
                 </div>
                 <motion.div variants = {spring} initial = "hidden" animate = "show" id="introwrap2">
                 <motion.div  className="introtitle">ring up your fruit!</motion.div>
-                <motion.div className="introtitle2" onClick = {()=>{navigate('/')}}>start now{'→'}</motion.div>
+
+                <motion.div className="introtitle2" onClick = {()=>{navigate('/')}}>start now →</motion.div>
+
                 <div id = "introratio2">
                 </div>
             </motion.div>
@@ -146,20 +133,20 @@ function AboutUs() {
             <div id = "demowraptext">demonstration</div>
             
             <div id = "demorec"></div>
-            <motion.div id="demovideo" initial={{scale:0.3, opacity:0}} whileInView = {{delay:0.2,scale:1,opacity:1}}>{/* <ReactPlayer
-    url={process.env.PUBLIC_URL + '/videos/demovideo.mp4'}
-    width='100%'
-    height='100%'
-    playing={true}
-    muted={true}
-    controls={true}
-    loop={true} 
-    />*/}<p align="middle"><video muted controls loop width='95%'
+
+            <motion.div id="demovideo" initial={{scale:0.3, opacity:0}} whileInView = {{delay:0.2,scale:1,opacity:1}}><p align="middle"><video muted controls loop width='95%'
     height='100%'>
             <source src='/videos/demovideo.mp4' type="video/mp4" />
         </video></p></motion.div>
             </div>
-        </div>
+
+          
+            
+
+
+
+        </motion.div>
+
     );
 
       }

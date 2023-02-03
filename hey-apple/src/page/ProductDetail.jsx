@@ -182,9 +182,11 @@ function ProductDetail() {
   function goback() {
     navigate("/products");
   }
+ 
+
   //contents=contents.filter((element, index) => contents.indexOf(element) === index);
   return (
-    <motion.div initial = {{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} id="productwrap2">
+    <div  key = "product"  id="productwrap2">
       <div id="detailimagecontainer" style={{ backgroundColor: `${color}` }}>
         <div
           id="detailarrowleft"
@@ -297,7 +299,7 @@ function ProductDetail() {
             </div>
           </div>
         </div><div id = "modalbottom" onClick = {()=>{setmodal(false)}}>﹀</div></motion.div> )}</AnimatePresence>
-    </motion.div>
+    </div>
    
   );
 }

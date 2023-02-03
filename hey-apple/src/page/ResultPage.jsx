@@ -91,7 +91,7 @@ const enterani = {
   
     
   return(
-    <div id = "wrap">
+    <motion.div id = "wrap" exit={{opacity:0, transition: { duration: 0.3 }}}>
     {(emailsuccess!=='sucess')?(<div id = "wrap">
      <Header/>
      <AnimatePresence>
@@ -109,7 +109,7 @@ const enterani = {
       </div><ResultsBox id = {fruitid} keys = {fruitnames} values = {fruitvalues} total = {totalprice} setemailsuccess={setemailsuccess}/></motion.div>):null}
       </AnimatePresence>
     </div>):<EmailCheck/>}
-    </div>
+    </motion.div>
   );
 }
 export default ResultPage;

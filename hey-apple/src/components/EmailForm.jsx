@@ -5,7 +5,6 @@ import DialogDivider from "./DialogDivider";
 import axiosCustom from "../apis/axiosCustom";
 import SendId from "../page/ResultPage";
 
-
 export default function EmailForm({id,setemailsuccess}) {
   const [email, setEmail] = useState("");
   const [open, setOpen] = useState(false);
@@ -46,7 +45,7 @@ export default function EmailForm({id,setemailsuccess}) {
       <button id="payment_button" onClick={handleClickOpen}>
         PAY
       </button>
-      <dialog
+      <dialog 
         id="email_dialog"
         open={open}
         onClose={handleClose}
