@@ -1,15 +1,6 @@
 # frontend
 # **🍎hey_apple🍎**
-![HeyApple](https://user-images.githubusercontent.com/70051888/216714950-50ba8934-aae9-4cd1-bb71-53b9b272343b.jpg)
-> 과일을 자동으로 인식하고 크롤링한 가격 평균 정보에 따라 과일의 가격을 매겨, 영수증을 만들어주고 이를 메일에 보내주는 서비스
- 
---
-* 자세한 사항은 heyapple repo에 있습니다 *
-<br/><br/>
-|__Frontend__|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=black">       
 
----
-<br/><br/>
 ## **| Pages |**
 
 ### 1. Main Features
